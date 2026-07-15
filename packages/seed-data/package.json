@@ -2,14 +2,18 @@
   "name": "@ocp-tco/seed-data",
   "version": "0.0.1",
   "private": true,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ocp-tco/model-schema": "workspace:*"
+    "@ocp-tco/model-schema": "workspace:*",
+    "@ocp-tco/model-engine": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.5.4"

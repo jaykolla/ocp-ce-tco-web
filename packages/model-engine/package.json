@@ -11,11 +11,11 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@ocp-tco/model-schema": "workspace:*"
+    "@ocp-tco/model-schema": "workspace:*",
+    "decimal.js": "^10.4.3"
   },
   "devDependencies": {
     "@ocp-tco/test-fixtures": "workspace:*",
-    "decimal.js": "^10.6.0",
     "typescript": "^5.5.4",
     "vitest": "^2.1.9"
   }

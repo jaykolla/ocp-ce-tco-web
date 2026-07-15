@@ -50,6 +50,23 @@ const ClusterSlot = z.object({
   quantity: z.number().int().nonnegative(),
 })
 
+// Performance/efficiency metrics stored in the Dataroom Library row
+// Populated by running the sub-model, then copied into library by user (or automatically).
+// NOTE: must be declared before DataroomConfig so it can be referenced in the schema.
+export const DataroomMetrics = z.object({
+  loadKw: NonNegativeDecimal,
+  fixedAreaM2: NonNegativeDecimal,
+  proportionalAreaM2PerKw: NonNegativeDecimal.optional(),
+  fixedCost: NonNegativeDecimal,
+  proportionalCostPerKw: NonNegativeDecimal.optional(),
+  proportionalLoss: FractionDecimal,
+  heatToLtHruFraction: FractionDecimal,
+  iteLoadEfficiencyL2: FractionDecimal,
+  iteLoadEfficiencyL3: FractionDecimal,
+  iteLoadEfficiencyL4: FractionDecimal,
+})
+export type DataroomMetrics = z.infer<typeof DataroomMetrics>
+
 export const DataroomConfig = z.object({
   id: z.string().min(1),
   version: z.number().int().positive(),
@@ -66,21 +83,4 @@ export const DataroomConfig = z.object({
   metrics: DataroomMetrics.optional(),
   provenance: Provenance.optional(),
 })
-
-// Performance/efficiency metrics stored in the Dataroom Library row
-// Populated by running the sub-model, then copied into library by user (or automatically).
-export const DataroomMetrics = z.object({
-  loadKw: NonNegativeDecimal,
-  fixedAreaM2: NonNegativeDecimal,
-  proportionalAreaM2PerKw: NonNegativeDecimal.optional(),
-  fixedCost: NonNegativeDecimal,
-  proportionalCostPerKw: NonNegativeDecimal.optional(),
-  proportionalLoss: FractionDecimal,
-  heatToLtHruFraction: FractionDecimal,
-  iteLoadEfficiencyL2: FractionDecimal,
-  iteLoadEfficiencyL3: FractionDecimal,
-  iteLoadEfficiencyL4: FractionDecimal,
-})
-export type DataroomMetrics = z.infer<typeof DataroomMetrics>
-
 export type DataroomConfig = z.infer<typeof DataroomConfig>

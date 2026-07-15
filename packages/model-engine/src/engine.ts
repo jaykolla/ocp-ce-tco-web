@@ -19,9 +19,9 @@ import type {
   ResourceBreakdown, FinancialMetrics, FinancialBreakdown,
   CalcWarning, CapacityMargin,
 } from '@ocp-tco/model-schema'
-import { computeEconomization } from './weather.js'
-import { computeCapex, computeOpex, computeFinancials } from './finance.js'
-import { hashInput } from './hash.js'
+import { computeEconomization } from './weather'
+import { computeCapex, computeOpex, computeFinancials } from './finance'
+import { hashInput } from './hash'
 
 // ─── Library resolver types (injected at call site from seed data) ─────────────
 export interface LibraryContext {

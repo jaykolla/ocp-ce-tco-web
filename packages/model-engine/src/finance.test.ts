@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { computeCapex, computeOpex, computeFinancials } from './finance.js'
+import { computeCapex, computeOpex, computeFinancials } from './finance'
 
 describe('computeCapex', () => {
   it('sums all CAPEX components correctly', () => {

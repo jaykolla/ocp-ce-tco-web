@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { solveLinearSystem } from './solver.js'
+import { solveLinearSystem } from './solver'
 
 describe('solveLinearSystem', () => {
   it('solves a 2x2 system', () => {
