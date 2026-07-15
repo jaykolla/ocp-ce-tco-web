@@ -1,0 +1,651 @@
+[
+  {
+    "id": "crah-default",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "CRAH",
+    "fixed_area": 281.80138353229245,
+    "proportional_area": null,
+    "fixed_cost": 820223.4465870829,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null
+  },
+  {
+    "id": "crah-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CRAH",
+    "fixed_area": 0,
+    "proportional_area": null,
+    "fixed_cost": 0,
+    "proportional_cost": null,
+    "proportional_losses": 0,
+    "cop": null
+  },
+  {
+    "id": "crah-se-rd99",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD99",
+    "_type": "CRAH",
+    "fixed_area": 694.72,
+    "proportional_area": null,
+    "fixed_cost": 1803719.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null
+  },
+  {
+    "id": "crah-se-rd99",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD99",
+    "_type": "CRAH",
+    "fixed_area": 670.72,
+    "proportional_area": null,
+    "fixed_cost": 2136569.6969696973,
+    "proportional_cost": null,
+    "proportional_losses": 0.04545454545454545,
+    "cop": null
+  },
+  {
+    "id": "crah-se-rd99",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD99",
+    "_type": "CRAH",
+    "fixed_area": 661.1600000000001,
+    "proportional_area": null,
+    "fixed_cost": 1946569.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.03703497925246017,
+    "cop": null
+  },
+  {
+    "id": "crah-se-rd99",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row136"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD99",
+    "_type": "CRAH",
+    "fixed_area": 334.6833333333333,
+    "proportional_area": null,
+    "fixed_cost": 1745200,
+    "proportional_cost": null,
+    "proportional_losses": 0.028116434535008936,
+    "cop": null
+  },
+  {
+    "id": "crah-default",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row156"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "CRAH",
+    "capacity": "NA",
+    "fixed_area": null,
+    "proportional_area": 0.04,
+    "fixed_cost": null,
+    "proportional_cost": 324,
+    "proportional_losses": null,
+    "cop": 22,
+    "heat_rejection_to_air_side": null
+  },
+  {
+    "id": "crah-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row156"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CRAH",
+    "capacity": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "fixed_cost": 0,
+    "proportional_cost": null,
+    "proportional_losses": null,
+    "cop": 1000000000000,
+    "heat_rejection_to_air_side": null
+  },
+  {
+    "id": "crah-se-rd65",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row156"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD65",
+    "_type": "CRAH",
+    "capacity": 500,
+    "fixed_area": 20,
+    "proportional_area": null,
+    "fixed_cost": 162000,
+    "proportional_cost": null,
+    "proportional_losses": null,
+    "cop": 22,
+    "heat_rejection_to_air_side": null
+  },
+  {
+    "id": "crah-se-rd99",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row156"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "SE RD99",
+    "_type": "CRAH",
+    "capacity": 500,
+    "fixed_area": 20,
+    "proportional_area": null,
+    "fixed_cost": 162000,
+    "proportional_cost": null,
+    "proportional_losses": null,
+    "cop": 22,
+    "heat_rejection_to_air_side": null
+  },
+  {
+    "id": "crah-12.121212121212121",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row230"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "12.121212121212121",
+    "_type": "CRAH",
+    "fixed_area": 60.65542699724513,
+    "proportional_area": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "crah-q_rack-crah",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row230"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_rack-crah",
+    "_type": "CRAH",
+    "fixed_area": null,
+    "proportional_area": null,
+    "cop": null,
+    "heat_rejection_to_air_side": null
+  },
+  {
+    "id": "crah-conservation",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row269"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Conservation",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_cl_r1,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row269"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r1,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_cl_r2,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row269"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r2,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_cl_r3,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row269"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r3,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_cl_pdu",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row269"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_pdu",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-244.87297214569944",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row278"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "244.87297214569944",
+    "_type": "CRAH",
+    "fixed_area": 281.80138353229245,
+    "proportional_area": null,
+    "fixed_cost": 820223.4465870829,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null
+  },
+  {
+    "id": "crah-q_cl,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row278"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl,a",
+    "_type": "CRAH",
+    "fixed_area": 0,
+    "proportional_area": 0.04,
+    "fixed_cost": 0,
+    "proportional_cost": 324,
+    "proportional_losses": null,
+    "cop": 22
+  },
+  {
+    "id": "crah-conservation",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "conservation",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl1,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl1,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl2,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl2,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl3,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl3,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl4,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl4,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cdu,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cdu,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-e_drms_oh-dr1",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "e_drms_oh-dr1",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_crah-hru,lt",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row324"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_crah-hru,lt",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-979.4918885827977",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "979.4918885827977",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl1,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl1,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl2,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl2,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl3,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl3,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cl4,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl4,a",
+    "_type": "CRAH"
+  },
+  {
+    "id": "crah-q_dr1_cdu,a",
+    "version": 1,
+    "category": "data-local",
+    "type": "CRAH",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row344"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cdu,a",
+    "_type": "CRAH"
+  }
+]

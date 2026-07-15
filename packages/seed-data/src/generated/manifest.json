@@ -1,0 +1,69 @@
+{
+  "modelVersion": "ocp-ce-tco-1.11-web-1",
+  "sourceWorkbookSha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5",
+  "sourceWorkbookFilename": "OCP CE TCO tool v1.11.xlsx",
+  "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+  "seedDatasetVersions": {
+    "power": "1.11.0",
+    "cooling": "1.11.0",
+    "data": "1.11.0",
+    "weather": "1.11.0"
+  },
+  "counts": {
+    "powerEquipment": 15,
+    "powerConfigs": 3,
+    "coolingEquipment": 12,
+    "coolingConfigs": 4,
+    "weatherProfiles": 28,
+    "chassis": 35,
+    "crah": 33,
+    "cdu": 25,
+    "rackConfigs": 8,
+    "clusterConfigs": 7,
+    "dataroomConfigs": 6
+  },
+  "metricDefinitions": {
+    "pueL3": {
+      "formulaId": "M-PUE-L3-001",
+      "unit": "ratio",
+      "sourceCells": [
+        "Paris!G5"
+      ]
+    },
+    "pueL4": {
+      "formulaId": "M-PUE-L4-001",
+      "unit": "ratio",
+      "sourceCells": [
+        "Paris!G6"
+      ]
+    },
+    "erf": {
+      "formulaId": "M-ERF-001",
+      "unit": "ratio",
+      "sourceCells": [
+        "Paris!G7"
+      ]
+    },
+    "wue": {
+      "formulaId": "M-WUE-001",
+      "unit": "L/kWh",
+      "sourceCells": [
+        "Paris!G8"
+      ]
+    },
+    "cue": {
+      "formulaId": "M-CUE-001",
+      "unit": "kgCO2e/kWh",
+      "sourceCells": [
+        "Paris!G9"
+      ]
+    }
+  },
+  "assumptions": [
+    "A-AREA-70PCT",
+    "A-CAPEX-PEAK",
+    "A-OPEX-AVG",
+    "A-LAND-EXCLUDED",
+    "A-ITE-EXCLUDED"
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "power-config-default",
+    "version": 1,
+    "name": "Default",
+    "tx": "Default",
+    "genset": "Default",
+    "swb": "Default",
+    "ups": "Default",
+    "chiller": "Default",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  },
+  {
+    "id": "power-config-se-rd-crit",
+    "version": 1,
+    "name": "SE RD Crit",
+    "tx": "None",
+    "genset": "SE RD65",
+    "swb": "SE RD65",
+    "ups": "SE RD65",
+    "chiller": "SE RD65",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  },
+  {
+    "id": "power-config-se-rd-mech",
+    "version": 1,
+    "name": "SE RD Mech",
+    "tx": "SE RD65",
+    "genset": "SE RD65",
+    "swb": "SE RD65",
+    "ups": "None",
+    "chiller": "None",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  }
+]

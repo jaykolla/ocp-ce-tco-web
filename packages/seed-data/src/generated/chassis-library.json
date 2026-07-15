@@ -1,0 +1,828 @@
+[
+  {
+    "id": "chassis-default",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0
+  },
+  {
+    "id": "chassis-compute-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Compute-air",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-compute-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Compute-air",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-ai-dtc",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "AI-dtc",
+    "_type": "Chassis",
+    "load": 74.62222222222222,
+    "fixed_area": 2.88,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-ai-dtc",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "AI-dtc",
+    "_type": "Chassis",
+    "load": 73.73737373741798,
+    "fixed_area": 2.1599999999999997,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.4059999999997624
+  },
+  {
+    "id": "chassis-net-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "NET-air",
+    "_type": "Chassis",
+    "load": 15.151515151515152,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-net-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row7"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "NET-air",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0,
+    "ite_load_efficiency_l3": 0,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 74.62222222222222,
+    "fixed_area": 2.88,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9782608695652174,
+    "ite_load_efficiency_l4": 0.7826086956521741
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 73.73737373741798,
+    "fixed_area": 2.1599999999999997,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.4059999999997624,
+    "ite_load_efficiency_l3": 0.9899999999994059,
+    "ite_load_efficiency_l4": 0.7919999999995249
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 15.151515151515152,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row9"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0,
+    "ite_load_efficiency_l3": 0,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 74.62222222222222,
+    "fixed_area": 2.88,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9782608695652174,
+    "ite_load_efficiency_l4": 0.7826086956521741
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 73.73737373741798,
+    "fixed_area": 2.1599999999999997,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.4059999999997624,
+    "ite_load_efficiency_l3": 0.9899999999994059,
+    "ite_load_efficiency_l4": 0.7919999999995249
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 15.151515151515152,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row11"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "chassis-default",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row68"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "Chassis",
+    "load": 1,
+    "fixed_area": null,
+    "proportional_area": null,
+    "unit_cost_if_known": null,
+    "power_based_cost_estimate": null,
+    "losses_eg_fans_psus": 0.27,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "height": 1,
+    "ite_load_efficiency_l3": null,
+    "ite_load_efficiency_l4": 0.73
+  },
+  {
+    "id": "chassis-none",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row68"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Chassis",
+    "load": 0,
+    "fixed_area": null,
+    "proportional_area": null,
+    "unit_cost_if_known": null,
+    "power_based_cost_estimate": null,
+    "losses_eg_fans_psus": 0,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "height": 0,
+    "ite_load_efficiency_l3": null,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "chassis-net-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row68"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "NET-air",
+    "_type": "Chassis",
+    "load": 1,
+    "fixed_area": null,
+    "proportional_area": null,
+    "unit_cost_if_known": null,
+    "power_based_cost_estimate": null,
+    "losses_eg_fans_psus": 0.27,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "height": 1,
+    "ite_load_efficiency_l3": null,
+    "ite_load_efficiency_l4": 0.73
+  },
+  {
+    "id": "chassis-compute-air",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row68"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Compute-air",
+    "_type": "Chassis",
+    "load": 2,
+    "fixed_area": null,
+    "proportional_area": null,
+    "unit_cost_if_known": null,
+    "power_based_cost_estimate": null,
+    "losses_eg_fans_psus": 0.27,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "height": 1,
+    "ite_load_efficiency_l3": null,
+    "ite_load_efficiency_l4": 0.73
+  },
+  {
+    "id": "chassis-ai-dtc",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row68"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "AI-dtc",
+    "_type": "Chassis",
+    "load": 8.11111111111111,
+    "fixed_area": null,
+    "proportional_area": null,
+    "unit_cost_if_known": null,
+    "power_based_cost_estimate": null,
+    "losses_eg_fans_psus": 0.2,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.4,
+    "height": 4,
+    "ite_load_efficiency_l3": null,
+    "ite_load_efficiency_l4": 0.8
+  },
+  {
+    "id": "chassis-conservation",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row204"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Conservation",
+    "_type": "Chassis"
+  },
+  {
+    "id": "chassis-e_rack_rpdu-ch1",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row204"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "e_rack_rpdu-ch1",
+    "_type": "Chassis"
+  },
+  {
+    "id": "chassis-conservation",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row208"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Conservation",
+    "_type": "Chassis"
+  },
+  {
+    "id": "chassis-e_rack_rpdu-ch2",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row208"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "e_rack_rpdu-ch2",
+    "_type": "Chassis"
+  },
+  {
+    "id": "chassis-conservation",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row212"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Conservation",
+    "_type": "Chassis"
+  },
+  {
+    "id": "chassis-e_rack_rpdu-ch3",
+    "version": 1,
+    "category": "chassis",
+    "type": "Chassis",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row212"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "e_rack_rpdu-ch3",
+    "_type": "Chassis"
+  }
+]

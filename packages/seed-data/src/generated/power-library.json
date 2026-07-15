@@ -1,0 +1,407 @@
+[
+  {
+    "id": "power-tx-default",
+    "version": 1,
+    "name": "Default",
+    "category": "power",
+    "type": "TX",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row12"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.04,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": 0.04,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-tx-none",
+    "version": 1,
+    "name": "None",
+    "category": "power",
+    "type": "TX",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row12"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": 0,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-tx-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "power",
+    "type": "TX",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row12"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.04,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": 0.01,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-genset-default",
+    "version": 1,
+    "name": "Default",
+    "category": "power",
+    "type": "Genset",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row25"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.02,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": null,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-genset-none",
+    "version": 1,
+    "name": "None",
+    "category": "power",
+    "type": "Genset",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row25"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": null,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-genset-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "power",
+    "type": "Genset",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row25"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.026,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": null,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-swb-default",
+    "version": 1,
+    "name": "Default",
+    "category": "power",
+    "type": "SWB",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row38"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.03,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": 0.01,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-swb-none",
+    "version": 1,
+    "name": "None",
+    "category": "power",
+    "type": "SWB",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row38"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": 0,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-swb-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "power",
+    "type": "SWB",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row38"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.04,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": 0.01,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-ups-default",
+    "version": 1,
+    "name": "Default",
+    "category": "power",
+    "type": "UPS",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row51"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.03,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": 0.02,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-ups-none",
+    "version": 1,
+    "name": "None",
+    "category": "power",
+    "type": "UPS",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row51"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": 0,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-ups-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "power",
+    "type": "UPS",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row51"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.031,
+    "fixedCost": null,
+    "proportionalCostPerKw": 434,
+    "proportionalLoss": 0.01,
+    "cop": null,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-chiller-default",
+    "version": 1,
+    "name": "Default",
+    "category": "power",
+    "type": "Chiller",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row64"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.03,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": null,
+    "cop": 20,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-chiller-none",
+    "version": 1,
+    "name": "None",
+    "category": "power",
+    "type": "Chiller",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row64"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": null,
+    "cop": 1000000000000,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "power-chiller-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "power",
+    "type": "Chiller",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Power",
+      "sourceCells": [
+        "Power!row64"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.02,
+    "fixedCost": null,
+    "proportionalCostPerKw": 324,
+    "proportionalLoss": null,
+    "cop": 22,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  }
+]

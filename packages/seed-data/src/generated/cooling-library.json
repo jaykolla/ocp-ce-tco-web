@@ -1,0 +1,326 @@
+[
+  {
+    "id": "cooling-fans-default",
+    "version": 1,
+    "name": "Default",
+    "category": "cooling",
+    "type": "Fans",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row13"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.04,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": null,
+    "cop": 50,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": 0,
+    "proportionalWaterLPerKwh": 1.4
+  },
+  {
+    "id": "cooling-fans-none",
+    "version": 1,
+    "name": "None",
+    "category": "cooling",
+    "type": "Fans",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row13"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0,
+    "fixedCost": null,
+    "proportionalCostPerKw": 0,
+    "proportionalLoss": null,
+    "cop": 1000000000000,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": 0,
+    "proportionalWaterLPerKwh": 0
+  },
+  {
+    "id": "cooling-fans-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "cooling",
+    "type": "Fans",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row13"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": 0.035,
+    "fixedCost": null,
+    "proportionalCostPerKw": 500,
+    "proportionalLoss": null,
+    "cop": 50,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": 0,
+    "proportionalWaterLPerKwh": 1.4
+  },
+  {
+    "id": "cooling-compressor-default",
+    "version": 1,
+    "name": "Default",
+    "category": "cooling",
+    "type": "Compressor",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row26"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 3,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-compressor-none",
+    "version": 1,
+    "name": "None",
+    "category": "cooling",
+    "type": "Compressor",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row26"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 1000000000000,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-compressor-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "cooling",
+    "type": "Compressor",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row26"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 4,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-freecooler-default",
+    "version": 1,
+    "name": "Default",
+    "category": "cooling",
+    "type": "FreeCooler",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row39"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 400,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-freecooler-none",
+    "version": 1,
+    "name": "None",
+    "category": "cooling",
+    "type": "FreeCooler",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row39"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 1000000000000,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-freecooler-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "cooling",
+    "type": "FreeCooler",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row39"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 500,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-pump-default",
+    "version": 1,
+    "name": "Default",
+    "category": "cooling",
+    "type": "Pump",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row52"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 400,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-pump-none",
+    "version": 1,
+    "name": "None",
+    "category": "cooling",
+    "type": "Pump",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row52"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 1000000000000,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  },
+  {
+    "id": "cooling-pump-se_rd65",
+    "version": 1,
+    "name": "SE RD65",
+    "category": "cooling",
+    "type": "Pump",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row52"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "capacityKw": null,
+    "fixedAreaM2": null,
+    "proportionalAreaM2PerKw": null,
+    "fixedCost": null,
+    "proportionalCostPerKw": null,
+    "proportionalLoss": null,
+    "cop": 405,
+    "heatToAirFraction": null,
+    "heatToLiquidFraction": null,
+    "fixedWaterLph": null,
+    "proportionalWaterLPerKwh": null
+  }
+]

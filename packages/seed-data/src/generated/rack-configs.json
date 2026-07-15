@@ -1,0 +1,202 @@
+[
+  {
+    "id": "rack-default",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "Rack Library",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "unit_cost": 3837.121212121212,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "rack-none",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Rack Library",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "unit_cost": 0,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "rack-it-12air",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-12air",
+    "_type": "Rack Library",
+    "load": 12.121212121212121,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "unit_cost": 4625,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7227
+  },
+  {
+    "id": "rack-it-40air",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-40air",
+    "_type": "Rack Library",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "unit_cost": 6625,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "rack-it-73dtc-l2a",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-73dtc-l2a",
+    "_type": "Rack Library",
+    "load": 74.62222222222222,
+    "fixed_area": 2.88,
+    "proportional_area": null,
+    "unit_cost": 70825,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.9782608695652174,
+    "ite_load_efficiency_l4": 0.7826086956521741
+  },
+  {
+    "id": "rack-it-73dtc-l2l",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-73dtc-l2l",
+    "_type": "Rack Library",
+    "load": 73.73737373741798,
+    "fixed_area": 2.1599999999999997,
+    "proportional_area": null,
+    "unit_cost": 40825,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.4059999999997624,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.9899999999994059,
+    "ite_load_efficiency_l4": 0.7919999999995249
+  },
+  {
+    "id": "rack-net-15a",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "NET-15a",
+    "_type": "Rack Library",
+    "load": 15.151515151515152,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "unit_cost": 4625,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.99,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  },
+  {
+    "id": "rack-net-40a",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row16"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "NET-40a",
+    "_type": "Rack Library",
+    "load": 40.40404040404041,
+    "fixed_area": 1.44,
+    "proportional_area": null,
+    "unit_cost": 6625,
+    "proportional_cost": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": null,
+    "ite_load_efficiency_l3": 0.9899999999999999,
+    "ite_load_efficiency_l4": 0.7226999999999999
+  }
+]

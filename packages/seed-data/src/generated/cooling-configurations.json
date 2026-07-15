@@ -1,0 +1,78 @@
+[
+  {
+    "id": "cooling-config-default-air",
+    "version": 1,
+    "name": "Default Air",
+    "pump": "Default",
+    "compressor": "Default",
+    "freeCooler": "Default",
+    "fans": "Default",
+    "tcwsCelsius": 20,
+    "tappCelsius": 5,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  },
+  {
+    "id": "cooling-config-default-liquid",
+    "version": 1,
+    "name": "Default Liquid",
+    "pump": "Default",
+    "compressor": "Default",
+    "freeCooler": "Default",
+    "fans": "Default",
+    "tcwsCelsius": 30,
+    "tappCelsius": 5,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  },
+  {
+    "id": "cooling-config-se-rd-air",
+    "version": 1,
+    "name": "SE RD Air",
+    "pump": "SE RD65",
+    "compressor": "SE RD65",
+    "freeCooler": "SE RD65",
+    "fans": "SE RD65",
+    "tcwsCelsius": 27,
+    "tappCelsius": 5,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  },
+  {
+    "id": "cooling-config-se-rd-liquid",
+    "version": 1,
+    "name": "SE RD Liquid",
+    "pump": "SE RD65",
+    "compressor": "SE RD65",
+    "freeCooler": "SE RD65",
+    "fans": "SE RD65",
+    "tcwsCelsius": 40,
+    "tappCelsius": 5,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Cooling",
+      "sourceCells": [
+        "Cooling!row3"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    }
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "dataroom-default",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "Dataroom Library",
+    "load": 979.4918885827977,
+    "fixed_area": 281.80138353229245,
+    "proportional_area": null,
+    "fixed_cost": 820223.4465870829,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 1,
+    "ite_load_efficiency_l2": 0.99,
+    "ite_load_efficiency_l3": 0.9801,
+    "ite_load_efficiency_l4": 0.715473
+  },
+  {
+    "id": "dataroom-none",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Dataroom Library",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "fixed_cost": 0,
+    "proportional_cost": null,
+    "proportional_losses": 0,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0,
+    "ite_load_efficiency_l2": 0,
+    "ite_load_efficiency_l3": 0,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "dataroom-1-air",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "1-air",
+    "_type": "Dataroom Library",
+    "load": 2050.811141720233,
+    "fixed_area": 694.72,
+    "proportional_area": null,
+    "fixed_cost": 1803719.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 1,
+    "ite_load_efficiency_l2": 0.9899999999999999,
+    "ite_load_efficiency_l3": 0.9800999999999999,
+    "ite_load_efficiency_l4": 0.7154729999999999
+  },
+  {
+    "id": "dataroom-1-dtc-l2a",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "1-dtc-l2a",
+    "_type": "Dataroom Library",
+    "load": 1908.9970411182535,
+    "fixed_area": 670.72,
+    "proportional_area": null,
+    "fixed_cost": 2136569.6969696973,
+    "proportional_cost": null,
+    "proportional_losses": 0.04545454545454545,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.9999999999999999,
+    "ite_load_efficiency_l2": 0.9899999999999999,
+    "ite_load_efficiency_l3": 0.9764289623561202,
+    "ite_load_efficiency_l4": 0.7342075287759325
+  },
+  {
+    "id": "dataroom-1-dtc-l2l",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "1-dtc-l2l",
+    "_type": "Dataroom Library",
+    "load": 1904.182750331959,
+    "fixed_area": 661.1600000000001,
+    "proportional_area": null,
+    "fixed_cost": 1946569.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.03703497925246017,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.9999999999999999,
+    "ite_load_efficiency_l2": 0.98878549472229,
+    "ite_load_efficiency_l3": 0.9788976397748831,
+    "ite_load_efficiency_l4": 0.7360638046719293
+  },
+  {
+    "id": "dataroom-2-dtc-l2l",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row141"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "2-dtc-l2l",
+    "_type": "Dataroom Library",
+    "load": 1849.3817234983223,
+    "fixed_area": 334.6833333333333,
+    "proportional_area": null,
+    "fixed_cost": 1745200,
+    "proportional_cost": null,
+    "proportional_losses": 0.028116434535008936,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.6289929550612442,
+    "ite_load_efficiency_l2": 0.9874990128099377,
+    "ite_load_efficiency_l3": 0.9776240226814592,
+    "ite_load_efficiency_l4": 0.7578749060787242
+  }
+]

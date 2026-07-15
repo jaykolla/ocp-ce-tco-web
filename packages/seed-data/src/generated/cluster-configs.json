@@ -1,0 +1,163 @@
+[
+  {
+    "id": "cluster-default",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "Cluster Library",
+    "load": 244.87297214569944,
+    "fixed_area": 60.65542699724513,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": 0.99,
+    "ite_load_efficiency_l3": 0.9801,
+    "ite_load_efficiency_l4": 0.715473
+  },
+  {
+    "id": "cluster-none",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "Cluster Library",
+    "load": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": 0,
+    "ite_load_efficiency_l3": 0,
+    "ite_load_efficiency_l4": 0
+  },
+  {
+    "id": "cluster-it-12air",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-12air",
+    "_type": "Cluster Library",
+    "load": 244.87297214569944,
+    "fixed_area": 60.84,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": 0.99,
+    "ite_load_efficiency_l3": 0.9801,
+    "ite_load_efficiency_l4": 0.715473
+  },
+  {
+    "id": "cluster-it-40air",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-40air",
+    "_type": "Cluster Library",
+    "load": 357.1064177124784,
+    "fixed_area": 117.12,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": 0.9899999999999999,
+    "ite_load_efficiency_l3": 0.9800999999999999,
+    "ite_load_efficiency_l4": 0.7154729999999998
+  },
+  {
+    "id": "cluster-it-73dtc-l2a_1",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-73dtc-l2a_1",
+    "_type": "Cluster Library",
+    "load": 464.7525762677278,
+    "fixed_area": 163.68000000000004,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 1,
+    "ite_load_efficiency_l2": 0.9899999999999999,
+    "ite_load_efficiency_l3": 0.9725605044083037,
+    "ite_load_efficiency_l4": 0.7539495591696231
+  },
+  {
+    "id": "cluster-it-73-dtc-l2l_1",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-73-dtc-l2l_1",
+    "_type": "Cluster Library",
+    "load": 461.1774308745794,
+    "fixed_area": 146.40000000000003,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.6201028318581744,
+    "ite_load_efficiency_l2": 0.99,
+    "ite_load_efficiency_l3": 0.9800999999996199,
+    "ite_load_efficiency_l4": 0.7597943362828913
+  },
+  {
+    "id": "cluster-it-73dtc-l2l_2",
+    "version": 1,
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row94"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "IT-73dtc-l2l_2",
+    "_type": "Cluster Library",
+    "load": 461.1774308745794,
+    "fixed_area": 56.17083333333333,
+    "proportional_area": null,
+    "losses_eg_fans_psus": null,
+    "cop": null,
+    "heat_rejection_to_air_side": 0.6201028318581744,
+    "ite_load_efficiency_l2": 0.99,
+    "ite_load_efficiency_l3": 0.9800999999996199,
+    "ite_load_efficiency_l4": 0.7597943362828913
+  }
+]

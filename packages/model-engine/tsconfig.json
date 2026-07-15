@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "paths": {
+      "@ocp-tco/model-schema": ["../model-schema/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

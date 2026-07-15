@@ -1,0 +1,510 @@
+[
+  {
+    "id": "cdu-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CDU",
+    "fixed_area": 281.80138353229245,
+    "proportional_area": null,
+    "fixed_cost": 820223.4465870829,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 1
+  },
+  {
+    "id": "cdu-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CDU",
+    "fixed_area": 0,
+    "proportional_area": null,
+    "fixed_cost": 0,
+    "proportional_cost": null,
+    "proportional_losses": 0,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0
+  },
+  {
+    "id": "cdu-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CDU",
+    "fixed_area": 694.72,
+    "proportional_area": null,
+    "fixed_cost": 1803719.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.045454545454545456,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 1
+  },
+  {
+    "id": "cdu-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CDU",
+    "fixed_area": 670.72,
+    "proportional_area": null,
+    "fixed_cost": 2136569.6969696973,
+    "proportional_cost": null,
+    "proportional_losses": 0.04545454545454545,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.9999999999999999
+  },
+  {
+    "id": "cdu-dtc_lt",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "DTC_LT",
+    "_type": "CDU",
+    "fixed_area": 661.1600000000001,
+    "proportional_area": null,
+    "fixed_cost": 1946569.696969697,
+    "proportional_cost": null,
+    "proportional_losses": 0.03703497925246017,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.9999999999999999
+  },
+  {
+    "id": "cdu-dtc_ht",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row138"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "DTC_HT",
+    "_type": "CDU",
+    "fixed_area": 334.6833333333333,
+    "proportional_area": null,
+    "fixed_cost": 1745200,
+    "proportional_cost": null,
+    "proportional_losses": 0.028116434535008936,
+    "cop": null,
+    "heat_rejection_to_lt_hru": 0.6289929550612442
+  },
+  {
+    "id": "cdu-default",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row169"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Default",
+    "_type": "CDU",
+    "capacity": "NA",
+    "fixed_area": null,
+    "proportional_area": 0.1,
+    "fixed_cost": null,
+    "proportional_cost": 100,
+    "proportional_losses": 0.02,
+    "cop": 100,
+    "heat_rejection_to_lt_hru": 0
+  },
+  {
+    "id": "cdu-none",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row169"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "None",
+    "_type": "CDU",
+    "capacity": 0,
+    "fixed_area": 0,
+    "proportional_area": null,
+    "fixed_cost": 0,
+    "proportional_cost": null,
+    "proportional_losses": 0,
+    "cop": 1000000000000,
+    "heat_rejection_to_lt_hru": 0
+  },
+  {
+    "id": "cdu-dtc_lt",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row169"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "DTC_LT",
+    "_type": "CDU",
+    "capacity": 500,
+    "fixed_area": 25,
+    "proportional_area": null,
+    "fixed_cost": 50000,
+    "proportional_cost": null,
+    "proportional_losses": 0.01,
+    "cop": 150,
+    "heat_rejection_to_lt_hru": 1
+  },
+  {
+    "id": "cdu-dtc_ht",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row169"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "DTC_HT",
+    "_type": "CDU",
+    "capacity": 500,
+    "fixed_area": 25,
+    "proportional_area": null,
+    "fixed_cost": 50000,
+    "proportional_cost": null,
+    "proportional_losses": 0.01,
+    "cop": 150,
+    "heat_rejection_to_lt_hru": 0
+  },
+  {
+    "id": "cdu-q_rack_rcdu,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row229"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_rack_rcdu,l",
+    "_type": "CDU",
+    "fixed_area": null,
+    "proportional_area": null,
+    "cop": null
+  },
+  {
+    "id": "cdu-conservation",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row268"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "Conservation",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_cl_r1,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row268"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r1,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_cl_r2,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row268"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r2,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_cl_r3,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row268"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl_r3,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_cl,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row277"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_cl,l",
+    "_type": "CDU",
+    "fixed_area": 0,
+    "proportional_area": 0.04,
+    "fixed_cost": 0,
+    "proportional_cost": 324,
+    "proportional_losses": null,
+    "cop": 22
+  },
+  {
+    "id": "cdu-conservation",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row327"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "conservation",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl1,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row327"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl1,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl2,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row327"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl2,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl3,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row327"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl3,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl4,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row327"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl4,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl1,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row343"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl1,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl2,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row343"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl2,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl3,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row343"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl3,l",
+    "_type": "CDU"
+  },
+  {
+    "id": "cdu-q_dr1_cl4,l",
+    "version": 1,
+    "category": "data-local",
+    "type": "CDU",
+    "status": "published",
+    "provenance": {
+      "source": "OCP CE TCO v1.11 Data",
+      "sourceCells": [
+        "Data!row343"
+      ],
+      "extractedAt": "2026-07-15T21:56:28.132139+00:00",
+      "sha256": "9b5bdc1d333f7a9823f10d1ff518b56f43a51491343825195e2a5a16e47088e5"
+    },
+    "name": "q_dr1_cl4,l",
+    "_type": "CDU"
+  }
+]
