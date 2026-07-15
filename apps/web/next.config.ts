@@ -1,11 +1,26 @@
 import type { NextConfig } from 'next'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig: NextConfig = {
-  // seed-data has no dist/ — it must be compiled from source by Turbopack.
-  // model-engine and model-schema already have pre-built dist/ directories and
-  // their package.json main fields point to dist/index.js so Turbopack uses
-  // the compiled JS directly (no transpilation needed for those two).
-  transpilePackages: ['@ocp-tco/seed-data'],
+  // ─── GitHub Pages: static HTML export ──────────────────────────────────────
+  // All pages are pre-rendered to static HTML+JS at build time.
+  // No Node.js server needed at runtime — pure client-side React app.
+  output: 'export',
+
+  // Repo name becomes the URL base: https://jaykolla.github.io/ocp-ce-tco-web/
+  basePath: isProd ? '/ocp-ce-tco-web' : '',
+  assetPrefix: isProd ? '/ocp-ce-tco-web/' : '',
+
+  // GitHub Pages serves static files — image optimization requires a server
+  images: { unoptimized: true },
+
+  // Workspace packages compiled from TypeScript source by Next.js bundler
+  transpilePackages: [
+    '@ocp-tco/model-engine',
+    '@ocp-tco/model-schema',
+    '@ocp-tco/seed-data',
+  ],
 }
 
 export default nextConfig

@@ -37,7 +37,7 @@ function getOrCreateWorker(): Worker | null {
   if (!sharedWorker) {
     try {
       sharedWorker = new Worker(
-        new URL('@/workers/calculation.worker', import.meta.url),
+        new URL('../workers/calculation.worker.ts', import.meta.url),
         { type: 'module' },
       )
 
