@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ocp-tco/model-schema": ["../../packages/model-schema/src/index.ts"],
+      "@ocp-tco/model-engine": ["../../packages/model-engine/src/index.ts"],
+      "@ocp-tco/seed-data": ["../../packages/seed-data/src/index.ts"]
     }
   },
   "include": [
@@ -28,7 +31,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "../../packages/model-schema/src",
+    "../../packages/model-engine/src",
+    "../../packages/seed-data/src"
   ],
   "exclude": ["node_modules"]
 }
