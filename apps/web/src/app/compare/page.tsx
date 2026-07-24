@@ -365,55 +365,54 @@ export default function ComparePage() {
               </p>
             </section>
 
-            {/* Charts row */}
-            <section>
-              <h2 className="mb-4 text-base font-semibold text-zinc-800 dark:text-zinc-200">
+            {/* Charts — one per row, full width */}
+            <section className="space-y-6">
+              <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-200">
                 Visual Comparison
               </h2>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-                  <h3 className="mb-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wide">
-                    CAPEX
-                  </h3>
-                  <CapexBreakdownChart
-                    scenarios={selected.map((s) => ({ name: s.name, capex: s.capex }))}
-                    currency={currency}
-                    height={220}
-                  />
-                </div>
 
-                <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-                  <h3 className="mb-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wide">
-                    OPEX
-                  </h3>
-                  <OpexBreakdownChart
-                    scenarios={selected.map((s) => ({ name: s.name, opex: s.opex }))}
-                    currency={currency}
-                    height={220}
-                  />
-                </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">
+                  CAPEX Breakdown
+                </h3>
+                <CapexBreakdownChart
+                  scenarios={selected.map((s) => ({ name: s.name, capex: s.capex }))}
+                  currency={currency}
+                  height={340}
+                />
+              </div>
 
-                <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-                  <h3 className="mb-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wide">
-                    Annual Costs
-                  </h3>
-                  <AnnualCostsChart
-                    scenarios={selected.map((s) => ({ name: s.name, financials: s.financials }))}
-                    currency={currency}
-                    height={220}
-                  />
-                </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">
+                  OPEX Breakdown
+                </h3>
+                <OpexBreakdownChart
+                  scenarios={selected.map((s) => ({ name: s.name, opex: s.opex }))}
+                  currency={currency}
+                  height={340}
+                />
+              </div>
 
-                <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-                  <h3 className="mb-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wide">
-                    Cash Flow
-                  </h3>
-                  <NpvBreakevenChart
-                    scenarios={selected.map((s) => ({ name: s.name, financials: s.financials }))}
-                    currency={currency}
-                    height={220}
-                  />
-                </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">
+                  Annual Costs Over Time
+                </h3>
+                <AnnualCostsChart
+                  scenarios={selected.map((s) => ({ name: s.name, financials: s.financials }))}
+                  currency={currency}
+                  height={380}
+                />
+              </div>
+
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">
+                  Cumulative Cash Flow
+                </h3>
+                <NpvBreakevenChart
+                  scenarios={selected.map((s) => ({ name: s.name, financials: s.financials }))}
+                  currency={currency}
+                  height={380}
+                />
               </div>
             </section>
           </>
