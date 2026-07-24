@@ -278,16 +278,18 @@ describe('Paris parity: engine integration vs v1.11 Excel workbook', () => {
 
   // ── Resource metrics ──────────────────────────────────────────────────────
 
-  it('PUE L3 is within 10% of workbook value (Paris!G5 = 1.123)', () => {
-    // PARITY TARGET: will tighten to 2.2% as engine is calibrated
+  it('PUE L3 is within 8% of workbook value (Paris!G5 = 1.123)', () => {
+    // Tightened from 10% → 8%. Engine is ~6.7% off due to synthetic sinusoidal
+    // weather profile not matching the true Paris TMY data exactly.
+    // Phase 2 target: 2.2% (requires real TMY from seed-data package).
     const expected = getNum(parisFixture.cachedCellValues, 'Paris!G5')
-    expectWithinRelTol(result.metrics.pueL3, expected, 0.10, 'PUE L3')
+    expectWithinRelTol(result.metrics.pueL3, expected, 0.08, 'PUE L3')
   })
 
-  it('PUE L4 is within 10% of workbook value (Paris!G6 = 1.494)', () => {
-    // PARITY TARGET: will tighten to 2.2% as engine is calibrated
+  it('PUE L4 is within 8% of workbook value (Paris!G6 = 1.494)', () => {
+    // Tightened from 10% → 8%. PUE L4 has same weather sensitivity as PUE L3.
     const expected = getNum(parisFixture.cachedCellValues, 'Paris!G6')
-    expectWithinRelTol(result.metrics.pueL4, expected, 0.10, 'PUE L4')
+    expectWithinRelTol(result.metrics.pueL4, expected, 0.08, 'PUE L4')
   })
 
   it('ERF is non-negative (Paris!G7 = 0.161, requires HRU model)', () => {
@@ -303,10 +305,10 @@ describe('Paris parity: engine integration vs v1.11 Excel workbook', () => {
     expect(result.metrics.wue).toBeGreaterThanOrEqual(0)
   })
 
-  it('CUE is within 10% of workbook value (Paris!G9 = 0.414)', () => {
-    // PARITY TARGET: CUE = PUE L3 * co2GPerKwh / 1000; calibrates with PUE L3
+  it('CUE is within 8% of workbook value (Paris!G9 = 0.414)', () => {
+    // Tightened from 10% → 8%. CUE = PUE L3 * co2GPerKwh / 1000; tracks PUE L3 error.
     const expected = getNum(parisFixture.cachedCellValues, 'Paris!G9')
-    expectWithinRelTol(result.metrics.cue, expected, 0.10, 'CUE')
+    expectWithinRelTol(result.metrics.cue, expected, 0.08, 'CUE')
   })
 
   // ── Power breakdown ───────────────────────────────────────────────────────
@@ -345,14 +347,13 @@ describe('Paris parity: engine integration vs v1.11 Excel workbook', () => {
 
   // ── Financial metrics ─────────────────────────────────────────────────────
 
-  it('CAPEX total is within 20% of workbook (Paris!G31 = €33,979,975)', () => {
-    // PARITY TARGET: currently ~13.5% off due to mock library approximations.
-    // Will tighten to 10% then 0.001% as seed-data library is wired in.
-    // Mock library uses proportional cost per kW derived from fixture totals,
-    // but the engine computes area and CAPEX differently from the workbook's
-    // equipment-table-level accounting.
+  it('CAPEX total is within 10% of workbook (Paris!G31 = €33,979,975)', () => {
+    // Tightened from 20% → 10% after Bug 1 fix: CAPEX core-and-shell now uses
+    // raw (fac + dataroom) area sum as cost basis (not the 0.7-compacted overall area).
+    // Engine ~3% off due to mock library proportional-cost approximation.
+    // Will tighten to 0.001% when seed-data equipment table is wired in.
     const expected = getNum(parisFixture.cachedCellValues, 'Paris!G31')
-    expectWithinRelTol(result.financialMetrics.capexTotal, expected, 0.20, 'CAPEX total')
+    expectWithinRelTol(result.financialMetrics.capexTotal, expected, 0.10, 'CAPEX total')
   })
 
   it('OPEX annual (engine) is positive and of correct order of magnitude', () => {
@@ -392,11 +393,22 @@ describe('Paris parity: engine integration vs v1.11 Excel workbook', () => {
     expect(result.metrics.cue).toBeCloseTo(expectedCue, 10)
   })
 
-  it('Break-even revenue is a positive number', () => {
-    expect(result.financialMetrics.annualRevenueToBreakEven).toBeGreaterThan(0)
+  it('Break-even revenue is greater than annual OPEX (Bug 2 fix: correct sign convention)', () => {
+    // Bug 2 fixed: bisectBreakEven now uses NPV = initial + (-opex + R) * af = 0
+    // → R = opex + |initial| / af > opex (must cover OPEX plus amortize capital)
+    // Paris engine values:
+    //   OPEX ~€8.7M/yr, down payment ~€10.5M, annuity factor @5%/20yr ≈ 12.46
+    //   R = 8.7M + 10.5M/12.46 ≈ 9.5M EUR/yr
+    // Break-even must exceed annual OPEX (otherwise capex never recovered).
+    const annualOpex = result.financialMetrics.opexAnnualPayments
+    expect(result.financialMetrics.annualRevenueToBreakEven).toBeGreaterThan(annualOpex)
+    // Also verify it's in a physically plausible range (OPEX to OPEX + full CAPEX/yr)
+    expect(result.financialMetrics.annualRevenueToBreakEven).toBeGreaterThan(5_000_000)
+    expect(result.financialMetrics.annualRevenueToBreakEven).toBeLessThan(50_000_000)
   })
 
-  it('Monthly revenue per kW is positive', () => {
+  it('Monthly revenue per kW is positive (bisection calibration: Bug 2 fix)', () => {
+    // After Bug 2 fix, break-even is positive and meaningful, so monthly/kW > 0
     expect(result.financialMetrics.monthlyRevenuePerKwCriticalPower).toBeGreaterThan(0)
   })
 
@@ -425,16 +437,17 @@ describe('Singapore parity: engine integration vs v1.11 Excel workbook', () => {
     expect(result.warnings.filter(w => w.severity === 'blocking')).toHaveLength(0)
   })
 
-  it('PUE L3 is within 10% of workbook (Singapore!G5 = 1.283)', () => {
-    // PARITY TARGET: Singapore has more compressor hours (hot climate → less econ)
+  it('PUE L3 is within 6% of workbook (Singapore!G5 = 1.283)', () => {
+    // Tightened from 10% → 6%. Singapore ~5.3% off; synthetic near-zero-econ profile
+    // not a perfect match for real Singapore TMY. Phase 2 target: 2.2%.
     const expected = getNum(singaporeFixture.cachedCellValues, 'Singapore!G5')
-    expectWithinRelTol(result.metrics.pueL3, expected, 0.10, 'Singapore PUE L3')
+    expectWithinRelTol(result.metrics.pueL3, expected, 0.06, 'Singapore PUE L3')
   })
 
-  it('CUE is within 10% of workbook (Singapore!G9 = 0.473)', () => {
-    // PARITY TARGET
+  it('CUE is within 6% of workbook (Singapore!G9 = 0.473)', () => {
+    // Tightened from 10% → 6%. CUE tracks PUE L3 error.
     const expected = getNum(singaporeFixture.cachedCellValues, 'Singapore!G9')
-    expectWithinRelTol(result.metrics.cue, expected, 0.10, 'Singapore CUE')
+    expectWithinRelTol(result.metrics.cue, expected, 0.06, 'Singapore CUE')
   })
 
   it('Singapore PUE L3 is higher than Paris PUE L3 (hot climate = less free-cooling)', () => {
@@ -447,7 +460,9 @@ describe('Singapore parity: engine integration vs v1.11 Excel workbook', () => {
   })
 
   it('CAPEX total is within 10% of workbook (Singapore!G31 = €36,959,116)', () => {
-    // PARITY TARGET
+    // Tightened from 20% → 10% after Bug 1 fix: CAPEX core-and-shell now uses
+    // raw (fac + dataroom) area sum as cost basis.
+    // Engine slightly off due to mock library proportional-cost approximation.
     const expected = getNum(singaporeFixture.cachedCellValues, 'Singapore!G31')
     expectWithinRelTol(result.financialMetrics.capexTotal, expected, 0.10, 'Singapore CAPEX total')
   })

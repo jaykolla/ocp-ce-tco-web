@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { DollarSign } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
@@ -7,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { validateNumericInput, FINANCE_FIELD_VALIDATORS } from '@/lib/validation'
 
 interface FieldConfig {
   key: string
@@ -44,6 +46,7 @@ function FinanceField({
   hint,
   value,
   onChange,
+  error,
 }: {
   fieldKey: string
   label: string
@@ -51,6 +54,7 @@ function FinanceField({
   hint?: string
   value: string
   onChange: (val: string) => void
+  error?: string
 }) {
   return (
     <div className="space-y-1.5">
@@ -61,33 +65,80 @@ function FinanceField({
           type="number"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="flex-1"
-          aria-describedby={hint ? `hint-${fieldKey}` : undefined}
+          className={`flex-1 ${error ? 'border-red-400 focus:ring-red-400' : ''}`}
+          aria-describedby={error ? `error-${fieldKey}` : hint ? `hint-${fieldKey}` : undefined}
+          aria-invalid={!!error}
           step="any"
         />
         <span className="shrink-0 text-sm text-[var(--color-text-muted)] min-w-[64px]">{unit}</span>
       </div>
-      {hint && (
+      {error && (
+        <p id={`error-${fieldKey}`} role="alert" className="text-xs text-red-500 font-medium">
+          {error}
+        </p>
+      )}
+      {!error && hint && (
         <p id={`hint-${fieldKey}`} className="text-xs text-[var(--color-text-subtle)]">{hint}</p>
       )}
     </div>
   )
 }
 
+type FieldErrors = Record<string, string | undefined>
+
 export default function FinancePage() {
   const router = useRouter()
   const store = useWizardStore()
   const { nextStep, prevStep, updateFinance } = store
+  const [errors, setErrors] = useState<FieldErrors>({})
 
   const handleChange = (key: string, val: string) => {
     updateFinance({ [key]: val })
+
+    // Validate on change and clear error if now valid
+    const validatorOpts = FINANCE_FIELD_VALIDATORS[key]
+    if (validatorOpts) {
+      const result = validateNumericInput(val, validatorOpts)
+      setErrors((prev) => ({
+        ...prev,
+        [key]: result.valid ? undefined : result.error,
+      }))
+    }
   }
 
   const getValue = (key: string): string => {
     return String((store as unknown as Record<string, string>)[key] ?? '')
   }
 
+  const validateAll = (): boolean => {
+    const allFields = [...LEFT_FIELDS, ...RIGHT_FIELDS]
+    const newErrors: FieldErrors = {}
+    let hasError = false
+
+    for (const field of allFields) {
+      const validatorOpts = FINANCE_FIELD_VALIDATORS[field.key]
+      if (validatorOpts) {
+        const result = validateNumericInput(getValue(field.key), validatorOpts)
+        if (!result.valid) {
+          newErrors[field.key] = result.error
+          hasError = true
+        }
+      }
+    }
+
+    setErrors(newErrors)
+    return !hasError
+  }
+
   const handleContinue = () => {
+    if (!validateAll()) {
+      // Scroll to first error
+      const firstErrorKey = Object.entries(errors).find(([, v]) => v)?.[0]
+      if (firstErrorKey) {
+        document.getElementById(`field-${firstErrorKey}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+      return
+    }
     nextStep()
     router.push('/scenario/review')
   }
@@ -114,7 +165,7 @@ export default function FinancePage() {
       <div className="grid sm:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
-            <CardTitle>Costs & Maintenance</CardTitle>
+            <CardTitle>Costs &amp; Maintenance</CardTitle>
             <CardDescription>Unit costs and annual maintenance percentages.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -126,6 +177,7 @@ export default function FinancePage() {
                 unit={field.unit}
                 hint={field.hint}
                 value={getValue(field.key)}
+                error={errors[field.key]}
                 onChange={(val) => handleChange(field.key, val)}
               />
             ))}
@@ -134,7 +186,7 @@ export default function FinancePage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Sustainability & Financing</CardTitle>
+            <CardTitle>Sustainability &amp; Financing</CardTitle>
             <CardDescription>Environmental metrics, lifespans, and financial terms.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -146,6 +198,7 @@ export default function FinancePage() {
                 unit={field.unit}
                 hint={field.hint}
                 value={getValue(field.key)}
+                error={errors[field.key]}
                 onChange={(val) => handleChange(field.key, val)}
               />
             ))}

@@ -295,13 +295,16 @@ describe('Bisection break-even solver', () => {
     // The correct formulation would be: f(R) = initial + (-opex + R) * af
     // so break-even R = opex - initial/af (always a meaningful positive number).
     // This will be fixed in a future engine iteration; for now, we test structure only.
+    // Cost basis = facilitiesAreaM2 + dataroomAreaM2 (Paris!G24 + Paris!G25)
+    // = 1505.59 + 1029.40 = 2534.99 m² → coreAndShell = 1800 * 2534.99 = 4,562,987 EUR
     const capex = computeCapex({
       powerEquipmentCost: 18855747.37584315,
       coolingEquipmentCost: 2449333.2516681594,
       dataEquipmentCost: 3548919.6969696973,
       coreAndShellCostPerM2: 1800,
       fitOutCostPerM2: 1800,
-      totalFloorAreaM2: 3517.4018320245714,
+      facilitiesAreaM2: 1505.589710276321,
+      dataroomAreaM2: 1029.4033333333332,
     })
 
     const opex = computeOpex({
@@ -361,7 +364,8 @@ describe('Bisection break-even solver', () => {
       dataEquipmentCost: 2_000_000,
       coreAndShellCostPerM2: 1800,
       fitOutCostPerM2: 1800,
-      totalFloorAreaM2: 2000,
+      facilitiesAreaM2: 1200,
+      dataroomAreaM2: 800,
     })
 
     const opexLow = computeOpex({

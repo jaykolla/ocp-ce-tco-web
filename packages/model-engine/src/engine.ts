@@ -251,7 +251,10 @@ export async function runScenario(
     dataEquipmentCost: dataEquipmentCapex,
     coreAndShellCostPerM2: parseFloat(input.finance.coreAndShellUnitCostPerM2),
     fitOutCostPerM2: parseFloat(input.finance.fitOutUnitCostPerM2),
-    totalFloorAreaM2: overallAreaM2,
+    // Cost basis = raw sum of facilities + dataroom areas (workbook Paris!G40/G41),
+    // NOT the 0.7-compacted overallAreaM2 (used for floor area reporting only).
+    facilitiesAreaM2,
+    dataroomAreaM2: dataroomFloorAreaM2,
   })
 
   // ─── 11. OPEX ─────────────────────────────────────────────────────────────

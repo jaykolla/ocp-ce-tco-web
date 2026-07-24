@@ -10,11 +10,15 @@
  * - "Calculating" state only shown after 150 ms elapsed (avoids flicker)
  * - SSR-safe: falls back to direct (main-thread) calculation when Worker API
  *   is unavailable (e.g. during Next.js server rendering)
+ * - Custom weather profile: when a PvgisProfile is provided, calculation runs
+ *   on the main thread with an augmented LibraryContext (R2 feature)
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { ScenarioInput, CalculationResult } from '@ocp-tco/model-schema'
+import type { LibraryContext } from '@ocp-tco/model-engine'
 import type { WorkerInput, WorkerOutput } from '@/workers/calculation.worker'
+import type { PvgisProfile } from '@/lib/pvgis'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -96,6 +100,46 @@ async function fallbackCalculate(input: ScenarioInput, requestId: string): Promi
   }
 }
 
+// ─── Custom weather profile override ─────────────────────────────────────────
+
+/**
+ * Build a LibraryContext that wraps the standard seed-data context but
+ * overrides getWeatherProfile for the 'custom' zone ID.
+ *
+ * Called only when a PVGIS custom profile is available. Runs on the main
+ * thread (not in the worker) since the profile data lives in the component tree.
+ */
+async function calculateWithCustomProfile(
+  input: ScenarioInput,
+  pvgisProfile: PvgisProfile,
+  requestId: string
+): Promise<WorkerOutput> {
+  try {
+    const { runScenario } = await import('@ocp-tco/model-engine')
+    const { buildLibraryContext } = await import('@ocp-tco/seed-data')
+    const baseLib = buildLibraryContext()
+
+    // Build a custom LibraryContext that injects PVGIS data for the 'custom' zone
+    const customLib: LibraryContext = {
+      ...baseLib,
+      getWeatherProfile(zoneId: string) {
+        if (zoneId === 'custom') {
+          return {
+            hourlyDryBulbCelsius: pvgisProfile.hourlyDryBulbCelsius,
+            referenceCity: pvgisProfile.locationLabel,
+          }
+        }
+        return baseLib.getWeatherProfile(zoneId)
+      },
+    }
+
+    const result = await runScenario(input, customLib)
+    return { type: 'RESULT', result, requestId, durationMs: result.durationMs }
+  } catch (err) {
+    return { type: 'ERROR', error: String(err), requestId }
+  }
+}
+
 // ─── Counter for unique request IDs ──────────────────────────────────────────
 
 let requestCounter = 0
@@ -109,7 +153,10 @@ function nextRequestId(): string {
 const DEBOUNCE_MS = 150
 const CALCULATING_DELAY_MS = 150
 
-export function useCalculation(input: ScenarioInput | null): UseCalculationResult {
+export function useCalculation(
+  input: ScenarioInput | null,
+  pvgisProfile?: PvgisProfile | null
+): UseCalculationResult {
   const [result, setResult] = useState<CalculationResult | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -123,7 +170,7 @@ export function useCalculation(input: ScenarioInput | null): UseCalculationResul
   // Calculating-indicator delay timer
   const calculatingTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const runCalculation = useCallback(async (scenarioInput: ScenarioInput) => {
+  const runCalculation = useCallback(async (scenarioInput: ScenarioInput, customProfile: PvgisProfile | null | undefined) => {
     const requestId = nextRequestId()
     latestRequestId.current = requestId
 
@@ -135,7 +182,14 @@ export function useCalculation(input: ScenarioInput | null): UseCalculationResul
       }
     }, CALCULATING_DELAY_MS)
 
-    const output = await postToWorker(scenarioInput, requestId)
+    // Route: custom PVGIS profile → main-thread calculation with augmented context
+    //        standard zones → worker (or fallback)
+    let output: WorkerOutput
+    if (customProfile && scenarioInput.facilities.climateZoneId === 'custom') {
+      output = await calculateWithCustomProfile(scenarioInput, customProfile, requestId)
+    } else {
+      output = await postToWorker(scenarioInput, requestId)
+    }
 
     // Clear the calculating-indicator timer if result arrived fast
     if (calculatingTimer.current) {
@@ -168,13 +222,13 @@ export function useCalculation(input: ScenarioInput | null): UseCalculationResul
     // Debounce
     if (debounceTimer.current) clearTimeout(debounceTimer.current)
     debounceTimer.current = setTimeout(() => {
-      runCalculation(input)
+      runCalculation(input, pvgisProfile)
     }, DEBOUNCE_MS)
 
     return () => {
       if (debounceTimer.current) clearTimeout(debounceTimer.current)
     }
-  }, [input, runCalculation])
+  }, [input, pvgisProfile, runCalculation])
 
   return { result, isCalculating, error, lastCalculatedAt }
 }

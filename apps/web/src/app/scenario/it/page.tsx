@@ -9,12 +9,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 const DATAROOM_OPTIONS = [
-  { value: 'none', label: 'None' },
-  { value: 'default', label: 'Default' },
-  { value: '1-air', label: '1-air' },
-  { value: '1-dtc-l2a', label: '1-dtc-l2a' },
-  { value: '1-dtc-l2l', label: '1-dtc-l2l' },
-  { value: '2-dtc-l2l', label: '2-dtc-l2l' },
+  { value: 'none',      label: 'None',                          description: 'Slot unused' },
+  { value: 'default',   label: 'Default',                       description: 'Standard configuration' },
+  { value: '1-air',     label: '1 Row — Air Cooled',            description: 'Single row, traditional air cooling' },
+  { value: '1-dtc-l2a', label: '1 Row — Direct-to-Chip (L2A)', description: 'Single row, liquid DTC with air-assist secondary loop' },
+  { value: '1-dtc-l2l', label: '1 Row — Direct-to-Chip (L2L)', description: 'Single row, liquid DTC with liquid secondary loop' },
+  { value: '2-dtc-l2l', label: '2 Rows — Direct-to-Chip (L2L)',description: 'Dual row, liquid DTC with liquid secondary loop' },
 ]
 
 export default function ITDesignPage() {
@@ -110,10 +110,15 @@ export default function ITDesignPage() {
                   <SelectTrigger id={`slot-${index}`} aria-label={`Dataroom slot ${index + 1}`}>
                     <SelectValue placeholder="Select configuration" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="w-[340px]">
                     {DATAROOM_OPTIONS.map((opt) => (
-                      <SelectItem key={opt.value} value={opt.value}>
-                        {opt.label}
+                      <SelectItem key={opt.value} value={opt.value} textValue={opt.label}>
+                        <div className="flex flex-col py-0.5">
+                          <span className="font-medium">{opt.label}</span>
+                          {opt.description && (
+                            <span className="text-xs text-[var(--color-text-subtle)] font-normal">{opt.description}</span>
+                          )}
+                        </div>
                       </SelectItem>
                     ))}
                   </SelectContent>

@@ -1,12 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Thermometer } from 'lucide-react'
+import { Thermometer, Globe, MapPin } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { LocationPicker } from '@/components/location-picker'
 import { cn } from '@/lib/utils'
 
 const AIR_COOLING_CONFIGS = [
@@ -64,10 +66,15 @@ export default function CoolingPage() {
     coolingRedundancy,
     temperatureCategory,
     humidityCategory,
+    customLocation,
     nextStep,
     prevStep,
     updateCooling,
+    clearCustomLocation,
   } = useWizardStore()
+
+  // Local toggle state — initialise to 'on' if there's already a custom location in the store
+  const [useCustomLocation, setUseCustomLocation] = useState<boolean>(customLocation !== null)
 
   const handleContinue = () => {
     nextStep()
@@ -77,6 +84,13 @@ export default function CoolingPage() {
   const handleBack = () => {
     prevStep()
     router.push('/scenario/power')
+  }
+
+  const handleToggleCustomLocation = (enabled: boolean) => {
+    setUseCustomLocation(enabled)
+    if (!enabled) {
+      clearCustomLocation()
+    }
   }
 
   return (
@@ -170,49 +184,124 @@ export default function CoolingPage() {
             <CardDescription>Set the climate conditions for the data center location.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="temperature-category">Temperature Category (ASHRAE)</Label>
-              <Select
-                value={temperatureCategory}
-                onValueChange={(val) => updateCooling({ temperatureCategory: val })}
-              >
-                <SelectTrigger id="temperature-category">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {TEMPERATURE_CATEGORIES.map((c) => (
-                    <SelectItem key={c.value} value={c.value}>
-                      {c.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            {/* Profile source toggle */}
+            <div className="space-y-3">
+              <Label>Weather Profile Source</Label>
+              <div className="grid grid-cols-2 gap-3" role="radiogroup" aria-label="Weather profile source">
+                <button
+                  role="radio"
+                  aria-checked={!useCustomLocation}
+                  onClick={() => handleToggleCustomLocation(false)}
+                  type="button"
+                  className={cn(
+                    'flex flex-col items-start gap-1 rounded-[var(--radius-lg)] border-2 p-3 text-sm transition-all cursor-pointer text-left',
+                    !useCustomLocation
+                      ? 'border-[var(--color-primary)] bg-blue-50 text-[var(--color-primary)] dark:bg-blue-950/30'
+                      : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)] text-[var(--color-text-muted)]'
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    <Thermometer className="h-4 w-4 shrink-0" />
+                    <span className="font-semibold">Built-in Profiles</span>
+                  </div>
+                  <span className="text-xs mt-1">28 ASHRAE reference zones</span>
+                </button>
+
+                <button
+                  role="radio"
+                  aria-checked={useCustomLocation}
+                  onClick={() => handleToggleCustomLocation(true)}
+                  type="button"
+                  className={cn(
+                    'flex flex-col items-start gap-1 rounded-[var(--radius-lg)] border-2 p-3 text-sm transition-all cursor-pointer text-left',
+                    useCustomLocation
+                      ? 'border-[var(--color-primary)] bg-blue-50 text-[var(--color-primary)] dark:bg-blue-950/30'
+                      : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)] text-[var(--color-text-muted)]'
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    <Globe className="h-4 w-4 shrink-0" />
+                    <span className="font-semibold">Custom Location</span>
+                  </div>
+                  <span className="text-xs mt-1">PVGIS real-world data</span>
+                </button>
+              </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="humidity-category">Humidity Category</Label>
-              <Select
-                value={humidityCategory}
-                onValueChange={(val) => updateCooling({ humidityCategory: val })}
-              >
-                <SelectTrigger id="humidity-category">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {HUMIDITY_CATEGORIES.map((c) => (
-                    <SelectItem key={c.value} value={c.value}>
-                      {c.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            {/* Built-in profile selectors */}
+            {!useCustomLocation && (
+              <>
+                <div className="space-y-2">
+                  <Label htmlFor="temperature-category">Temperature Category (ASHRAE)</Label>
+                  <Select
+                    value={temperatureCategory}
+                    onValueChange={(val) => updateCooling({ temperatureCategory: val })}
+                  >
+                    <SelectTrigger id="temperature-category">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {TEMPERATURE_CATEGORIES.map((c) => (
+                        <SelectItem key={c.value} value={c.value}>
+                          {c.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
 
-            {/* Reference city preview */}
-            <div className="rounded-[var(--radius-md)] bg-[var(--color-bg-subtle)] border border-[var(--color-border)] px-4 py-3">
-              <p className="text-xs font-medium text-[var(--color-text-muted)] mb-1">Reference location</p>
-              <p className="text-sm text-[var(--color-text)]">{getCityPreview(temperatureCategory, humidityCategory)}</p>
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="humidity-category">Humidity Category</Label>
+                  <Select
+                    value={humidityCategory}
+                    onValueChange={(val) => updateCooling({ humidityCategory: val })}
+                  >
+                    <SelectTrigger id="humidity-category">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {HUMIDITY_CATEGORIES.map((c) => (
+                        <SelectItem key={c.value} value={c.value}>
+                          {c.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Reference city preview */}
+                <div className="rounded-[var(--radius-md)] bg-[var(--color-bg-subtle)] border border-[var(--color-border)] px-4 py-3">
+                  <p className="text-xs font-medium text-[var(--color-text-muted)] mb-1">Reference location</p>
+                  <p className="text-sm text-[var(--color-text)]">
+                    Using built-in profiles (28 reference zones)
+                  </p>
+                  <p className="text-xs text-[var(--color-text-muted)] mt-0.5">{getCityPreview(temperatureCategory, humidityCategory)}</p>
+                </div>
+              </>
+            )}
+
+            {/* Custom location picker */}
+            {useCustomLocation && (
+              <div className="space-y-3">
+                <div className="rounded-[var(--radius-md)] bg-[var(--color-bg-subtle)] border border-[var(--color-border)] px-4 py-3">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-3.5 w-3.5 text-[var(--color-text-muted)]" />
+                    <p className="text-xs font-medium text-[var(--color-text-muted)]">
+                      {customLocation?.pvgisProfile
+                        ? `Using PVGIS data for ${customLocation.label}`
+                        : 'Search for a location to load PVGIS weather data'}
+                    </p>
+                  </div>
+                  {customLocation?.pvgisProfile && (
+                    <p className="text-xs text-[var(--color-text-muted)] mt-1 ml-5">
+                      {customLocation.pvgisProfile.source} · {customLocation.pvgisProfile.hourlyDryBulbCelsius.length.toLocaleString()} hourly points
+                    </p>
+                  )}
+                </div>
+
+                <LocationPicker />
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

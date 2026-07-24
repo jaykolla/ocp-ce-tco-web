@@ -10,16 +10,18 @@
 
 import { useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Download, BarChart2, Loader2 } from 'lucide-react'
+import { ArrowLeft, Download, BarChart2, Loader2, FileText, LineChart } from 'lucide-react'
 import type { ScenarioInput } from '@ocp-tco/model-schema'
 
 import { useCalculation } from '@/hooks/use-calculation'
 import { useScenarioInputStore, TEMP_HUM_TO_ZONE } from '@/store/scenario-input-store'
+import { useWizardStore } from '@/store/wizard-store'
 import { MetricCard } from '@/components/ui/metric-card'
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { fmt3sig, fmtCurrency, fmtPower, fmtArea, fmtWater } from '@/lib/format'
-import { exportCalculationJSON } from '@/lib/export'
+import { exportCalculationJSON, printReport } from '@/lib/export'
+import { logEvent } from '@/lib/audit-log'
 
 // ─── Climate zone lookup ──────────────────────────────────────────────────────
 
@@ -74,18 +76,19 @@ function MetricRow({ label, value, sub }: { label: string; value: string; sub?: 
 
 export default function ResultsPage() {
   const store = useScenarioInputStore()
+  const wizardStore = useWizardStore()
+
+  // R2: custom PVGIS location from wizard store
+  const pvgisProfile = wizardStore.customLocation?.pvgisProfile ?? null
+  const hasCustomLocation = Boolean(pvgisProfile)
+
+  const wizardCurrency = wizardStore.currency
 
   // Build ScenarioInput from store state
   const scenarioInput = useMemo<ScenarioInput | null>(() => {
     // Check if at least one dataroom slot is filled
     const hasDataroom = store.dataroomSlots.some((s) => s !== null)
     if (!hasDataroom) return null
-
-    const climateZoneId = resolveClimateZoneId(store.temperatureCategory, store.humidityCategory)
-
-    // Validate climateZoneId against the schema enum values
-    const validZones = ['0A','0B','1A','1B','2A','2B','3A','3B','3C','4A','4B','4C','5A','5B','5C','6A','6B','7','8']
-    const safeZoneId = validZones.includes(climateZoneId) ? climateZoneId : '3A'
 
     const validTemperatureCategories = [
       'Subarctic/arctic','Very cold','Cold','Cool','Mixed','Warm','Hot','Very hot','Extremely hot'
@@ -100,9 +103,20 @@ export default function ResultsPage() {
     const safeHumidity = validHumidityCategories.includes(store.humidityCategory)
       ? store.humidityCategory
       : 'Wet'
-    const safeCurrency = validCurrencies.includes(store.currency) ? store.currency : 'EUR'
+    const safeCurrency = validCurrencies.includes(wizardCurrency) ? wizardCurrency : 'EUR'
     const safePowerRedundancy = validRedundancy.includes(store.powerRedundancy) ? store.powerRedundancy : 'N+1'
     const safeCoolingRedundancy = validRedundancy.includes(store.coolingRedundancy) ? store.coolingRedundancy : 'N+1'
+
+    // R2: when a PVGIS profile is loaded, use 'custom' zone ID so the engine
+    // picks up the injected weather profile from the augmented LibraryContext.
+    let safeZoneId: ScenarioInput['facilities']['climateZoneId']
+    if (hasCustomLocation) {
+      safeZoneId = 'custom'
+    } else {
+      const climateZoneId = resolveClimateZoneId(store.temperatureCategory, store.humidityCategory)
+      const validZones = ['0A','0B','1A','1B','2A','2B','3A','3B','3C','4A','4B','4C','5A','5B','5C','6A','6B','7','8']
+      safeZoneId = (validZones.includes(climateZoneId) ? climateZoneId : '3A') as ScenarioInput['facilities']['climateZoneId']
+    }
 
     return {
       id: store.id,
@@ -132,7 +146,7 @@ export default function ResultsPage() {
         coolingRedundancy: safeCoolingRedundancy as 'N' | 'N+1' | '2N',
         temperatureCategory: safeTemp as ScenarioInput['facilities']['temperatureCategory'],
         humidityCategory: safeHumidity as ScenarioInput['facilities']['humidityCategory'],
-        climateZoneId: safeZoneId as ScenarioInput['facilities']['climateZoneId'],
+        climateZoneId: safeZoneId,
       },
       finance: {
         currency: safeCurrency as ScenarioInput['finance']['currency'],
@@ -154,10 +168,11 @@ export default function ResultsPage() {
         annualHours: String(store.annualHours) as `${number}`,
       },
     } as ScenarioInput
-  }, [store])
+  }, [store, hasCustomLocation, wizardCurrency])
 
-  const { result, isCalculating, error } = useCalculation(scenarioInput)
-  const currency = store.currency
+  // Pass the PVGIS profile to the hook so it can use an augmented LibraryContext
+  const { result, isCalculating, error } = useCalculation(scenarioInput, pvgisProfile)
+  const currency = wizardStore.currency
 
   // ─── Empty state: no datarooms selected ────────────────────────────────────
 
@@ -249,7 +264,10 @@ export default function ResultsPage() {
         {m?.referenceCity && (
           <p className="text-xs text-[var(--color-text-muted)]">
             Weather data: <span className="font-medium text-[var(--color-text)]">{m.referenceCity}</span>
-            {' '}(ASHRAE zone {scenarioInput.facilities.climateZoneId})
+            {hasCustomLocation
+              ? <span> (PVGIS TMY 2005-2020)</span>
+              : <span> (ASHRAE zone {scenarioInput.facilities.climateZoneId})</span>
+            }
           </p>
         )}
 
@@ -475,12 +493,24 @@ function ResultsHeader({
               type="button"
               disabled={!result || !scenarioInput}
               onClick={() => {
-                if (result && scenarioInput) exportCalculationJSON(scenarioInput, result)
+                if (result && scenarioInput) {
+                  exportCalculationJSON(scenarioInput, result)
+                  logEvent({ type: 'export_json', scenarioId: scenarioInput.id })
+                }
               }}
               className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text)] shadow-sm transition-colors hover:bg-[var(--color-bg-subtle)] disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <Download className="h-4 w-4" />
               Export
+            </button>
+            <button
+              type="button"
+              disabled={!result}
+              onClick={() => printReport()}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text)] shadow-sm transition-colors hover:bg-[var(--color-bg-subtle)] disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <FileText className="h-4 w-4" />
+              Print / Save PDF
             </button>
             <Link
               href="/compare"
@@ -488,6 +518,13 @@ function ResultsHeader({
             >
               <BarChart2 className="h-4 w-4" />
               Compare
+            </Link>
+            <Link
+              href="/sensitivity"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text)] shadow-sm transition-colors hover:bg-[var(--color-bg-subtle)]"
+            >
+              <LineChart className="h-4 w-4" />
+              Sensitivity
             </Link>
           </div>
         </div>

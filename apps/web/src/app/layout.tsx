@@ -14,6 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Security headers as meta equivalents (GitHub Pages static export) */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
         <Providers>{children}</Providers>
       </body>

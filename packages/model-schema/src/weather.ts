@@ -1,10 +1,12 @@
 import { z } from 'zod'
 
 // ANSI/ASHRAE 169-2006 climate zone IDs supported in v1.11
+// 'custom' is a special value used when a PVGIS custom location is selected (R2)
 export const ClimateZoneId = z.enum([
   '0A', '0B', '1A', '1B', '2A', '2B',
   '3A', '3B', '3C', '4A', '4B', '4C',
-  '5A', '5B', '5C', '6A', '6B', '7', '8'
+  '5A', '5B', '5C', '6A', '6B', '7', '8',
+  'custom'
 ])
 export type ClimateZoneId = z.infer<typeof ClimateZoneId>
 

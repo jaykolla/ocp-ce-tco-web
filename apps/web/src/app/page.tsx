@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BarChart2, ArrowRight, Zap, Server, DollarSign } from 'lucide-react'
+import { BarChart2, ArrowRight, Zap, Server, DollarSign, FileSpreadsheet, LineChart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -50,7 +50,7 @@ export default function HomePage() {
         </div>
 
         {/* CTA cards */}
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <Card className="hover:shadow-[var(--shadow-md)] transition-shadow">
             <CardHeader>
               <CardTitle>New Scenario</CardTitle>
@@ -70,13 +70,53 @@ export default function HomePage() {
 
           <Card className="hover:shadow-[var(--shadow-md)] transition-shadow">
             <CardHeader>
+              <div className="flex items-center gap-2 mb-1">
+                <FileSpreadsheet className="h-5 w-5 text-[var(--color-ocp)]" />
+                <CardTitle>Import from Excel</CardTitle>
+              </div>
+              <CardDescription>
+                Upload an OCP CE TCO Tool v1.11 .xlsx file to pre-fill the wizard with existing parameters.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link href="/import">
+                <Button className="w-full" variant="outline">
+                  Import Excel File
+                  <FileSpreadsheet className="h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-[var(--shadow-md)] transition-shadow">
+            <CardHeader>
+              <div className="flex items-center gap-2 mb-1">
+                <LineChart className="h-5 w-5 text-[var(--color-ocp)]" />
+                <CardTitle>Sensitivity Analysis</CardTitle>
+              </div>
+              <CardDescription>
+                Sweep one parameter ±% and see how it impacts CAPEX, OPEX, NPV. Tornado chart included.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link href="/sensitivity">
+                <Button className="w-full" variant="outline">
+                  Open Sensitivity
+                  <LineChart className="h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-[var(--shadow-md)] transition-shadow sm:col-span-2 lg:col-span-3">
+            <CardHeader>
               <CardTitle>About This Tool</CardTitle>
               <CardDescription>
                 Based on OCP CE TCO Tool v1.11. An open-source model for transparent data center cost analysis aligned with OCP best practices.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2 text-sm text-[var(--color-text-muted)]">
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-[var(--color-text-muted)]">
                 <div className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--color-ocp)] shrink-0" />
                   7-stage guided wizard
@@ -92,6 +132,14 @@ export default function HomePage() {
                 <div className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--color-ocp)] shrink-0" />
                   Multi-currency support
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--color-ocp)] shrink-0" />
+                  Sensitivity analysis &amp; tornado chart
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--color-ocp)] shrink-0" />
+                  Excel workbook import
                 </div>
               </div>
             </CardContent>

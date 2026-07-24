@@ -1,7 +1,17 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import type { PvgisProfile } from '@/lib/pvgis'
 
 export type WizardStep = 0 | 1 | 2 | 3 | 4 | 5 | 6
+
+// ─── Custom location type (R2 feature) ───────────────────────────────────────
+
+export interface CustomLocation {
+  lat: number
+  lon: number
+  label: string
+  pvgisProfile: PvgisProfile | null
+}
 
 export const STEP_LABELS = [
   'Start',
@@ -53,6 +63,9 @@ export interface WizardStore {
   financingTermYr: string
   annualHours: string
 
+  // Custom location override (R2 — replaces built-in 28-zone profiles when set)
+  customLocation: CustomLocation | null
+
   // Actions
   setStep: (step: WizardStep) => void
   nextStep: () => void
@@ -62,6 +75,8 @@ export interface WizardStore {
   updateCooling: (data: Partial<WizardStore>) => void
   updateFinance: (data: Partial<WizardStore>) => void
   setScenarioName: (name: string) => void
+  setCustomLocation: (loc: CustomLocation) => void
+  clearCustomLocation: () => void
   reset: () => void
 }
 
@@ -86,6 +101,9 @@ const DEFAULT_STATE = {
   coolingRedundancy: 'N+1' as const,
   temperatureCategory: 'warm',
   humidityCategory: 'mixed',
+
+  // Custom location (R2)
+  customLocation: null,
 
   // Finance defaults (v1.11)
   electricityUnitCost: '0.20',
@@ -129,6 +147,10 @@ export const useWizardStore = create<WizardStore>()(
       updateFinance: (data) => set(data),
 
       setScenarioName: (name) => set({ scenarioName: name }),
+
+      setCustomLocation: (loc) => set({ customLocation: loc }),
+
+      clearCustomLocation: () => set({ customLocation: null }),
 
       reset: () => set(DEFAULT_STATE),
     }),

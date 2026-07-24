@@ -1,11 +1,15 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { CheckCircle, Server, Zap, Thermometer, DollarSign } from 'lucide-react'
+import { CheckCircle, Server, Zap, Thermometer, DollarSign, Save, CheckCheck } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
+import { useScenarioInputStore } from '@/store/scenario-input-store'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { saveScenarioToSession } from '@/lib/auth'
+import { sanitizeText } from '@/lib/validation'
 
 function ReviewRow({ label, value }: { label: string; value: string }) {
   return (
@@ -19,7 +23,9 @@ function ReviewRow({ label, value }: { label: string; value: string }) {
 export default function ReviewPage() {
   const router = useRouter()
   const store = useWizardStore()
+  const inputStore = useScenarioInputStore()
   const { nextStep, prevStep } = store
+  const [saved, setSaved] = useState(false)
 
   const activeDatarooms = store.dataroomSlots.filter((s) => s !== null && s !== 'none')
 
@@ -33,6 +39,55 @@ export default function ReviewPage() {
     router.push('/scenario/finance')
   }
 
+  const handleSaveScenario = () => {
+    const name = sanitizeText(store.scenarioName || 'My Scenario', 120)
+    const id = inputStore.id || `scenario-${Date.now()}`
+
+    // Build a lightweight snapshot of the current wizard state
+    const inputs: Record<string, unknown> = {
+      scenarioName: name,
+      currency: store.currency,
+      modelVersion: store.modelVersion,
+      powerCapacityUtilization: inputStore.powerCapacityUtilization,
+      dataroomSlots: inputStore.dataroomSlots,
+      criticalPowerConfigId: inputStore.criticalPowerConfigId,
+      mechanicalPowerConfigId: inputStore.mechanicalPowerConfigId,
+      powerRedundancy: inputStore.powerRedundancy,
+      airCoolingConfigId: inputStore.airCoolingConfigId,
+      liquidCoolingConfigId: inputStore.liquidCoolingConfigId,
+      coolingRedundancy: inputStore.coolingRedundancy,
+      temperatureCategory: inputStore.temperatureCategory,
+      humidityCategory: inputStore.humidityCategory,
+      electricityUnitCostPerKwh: inputStore.electricityUnitCostPerKwh,
+      coreAndShellUnitCostPerM2: inputStore.coreAndShellUnitCostPerM2,
+      fitOutUnitCostPerM2: inputStore.fitOutUnitCostPerM2,
+      waterUnitCostPerM3: inputStore.waterUnitCostPerM3,
+      heatRecoveryValuePerKwh: inputStore.heatRecoveryValuePerKwh,
+      coreAndShellMaintenanceFraction: inputStore.coreAndShellMaintenanceFraction,
+      equipmentMaintenanceFraction: inputStore.equipmentMaintenanceFraction,
+      electricityCo2GPerKwh: inputStore.electricityCo2GPerKwh,
+      electricityWaterLPerKwh: inputStore.electricityWaterLPerKwh,
+      facilityPowerCoolingLifespanYr: inputStore.facilityPowerCoolingLifespanYr,
+      itEquipmentLifespanYr: inputStore.itEquipmentLifespanYr,
+      discountRateFraction: inputStore.discountRateFraction,
+      capexFinancingRateFraction: inputStore.capexFinancingRateFraction,
+      capexFinancedFraction: inputStore.capexFinancedFraction,
+      capexFinancingTermYr: inputStore.capexFinancingTermYr,
+      annualHours: inputStore.annualHours,
+    }
+
+    saveScenarioToSession({
+      id,
+      name,
+      savedAt: new Date().toISOString(),
+      inputs,
+      // results will be populated if they navigate back from results page in the future
+    })
+
+    setSaved(true)
+    setTimeout(() => setSaved(false), 3000)
+  }
+
   return (
     <div className="max-w-2xl">
       <div className="mb-8">
@@ -41,7 +96,7 @@ export default function ReviewPage() {
             <CheckCircle className="h-5 w-5 text-[var(--color-success)]" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--color-text)]">Review & Validate</h1>
+            <h1 className="text-2xl font-bold text-[var(--color-text)]">Review &amp; Validate</h1>
             <p className="text-sm text-[var(--color-text-muted)]">Confirm your inputs before running the calculation</p>
           </div>
         </div>
@@ -100,7 +155,7 @@ export default function ReviewPage() {
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
               <Thermometer className="h-4 w-4 text-cyan-600" />
-              <CardTitle className="text-base">Cooling & Climate</CardTitle>
+              <CardTitle className="text-base">Cooling &amp; Climate</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -134,9 +189,35 @@ export default function ReviewPage() {
 
       <div className="mt-8 flex items-center justify-between">
         <Button variant="outline" onClick={handleBack}>Back</Button>
-        <Button variant="ocp" size="lg" onClick={handleRunCalculation}>
-          Run Calculation
-        </Button>
+
+        <div className="flex items-center gap-3">
+          {/* Save Scenario button */}
+          <button
+            type="button"
+            onClick={handleSaveScenario}
+            className={`flex items-center gap-1.5 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all ${
+              saved
+                ? 'border-green-300 bg-green-50 text-green-700 dark:border-green-700 dark:bg-green-950/30 dark:text-green-400'
+                : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] hover:bg-[var(--color-bg-subtle)]'
+            }`}
+          >
+            {saved ? (
+              <>
+                <CheckCheck className="h-4 w-4" />
+                Saved!
+              </>
+            ) : (
+              <>
+                <Save className="h-4 w-4" />
+                Save Scenario
+              </>
+            )}
+          </button>
+
+          <Button variant="ocp" size="lg" onClick={handleRunCalculation}>
+            Run Calculation
+          </Button>
+        </div>
       </div>
     </div>
   )

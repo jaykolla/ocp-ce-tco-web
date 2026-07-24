@@ -60,3 +60,43 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@media print {
+  /* Hide non-report UI elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset backgrounds and shadows for print */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Keep OCP green for borders/accents */
+  .print-ocp-border {
+    border-color: #7EC924 !important;
+    color: #7EC924 !important;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+  .page-break-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Body for print */
+  body {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide browser chrome artifacts */
+  a[href]::after {
+    content: none !important;
+  }
+}

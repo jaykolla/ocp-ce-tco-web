@@ -16,7 +16,9 @@ export interface CapexInputs {
   dataEquipmentCost: number
   coreAndShellCostPerM2: number
   fitOutCostPerM2: number
-  totalFloorAreaM2: number
+  /** Raw sum of facilities + dataroom areas used as cost basis (Paris!G40 workbook) */
+  facilitiesAreaM2: number
+  dataroomAreaM2: number
 }
 
 export interface OpexInputs {
@@ -85,7 +87,11 @@ function npvConstant(
 }
 
 // ─── Bisection root solver for break-even revenue ────────────────────────────
-// PRD §7.6: find R such that NPV(discount, expense + R, horizon) + initial = 0
+// PRD §7.6: find R such that NPV = initialInvestment + (-annualExpense + R) * af = 0
+// → R = annualExpense - initialInvestment / af
+// Since initialInvestment is negative (outflow), -initialInvestment/af is positive,
+// so break-even R = annualExpense + |initialInvestment| / af > annualExpense.
+// For Paris: ~€9M OPEX + ~€1M annuity contribution ≈ ~€10M/yr break-even.
 function bisectBreakEven(
   discountRate: number,
   annualExpense: number,
@@ -93,14 +99,16 @@ function bisectBreakEven(
   horizonYears: number
 ): number {
   const target = 0
+  // Revenue is positive cashflow, OPEX is negative — correct NPV sign convention:
+  // NPV = initial + (-opex + revenue) * annuityFactor = 0
   const f = (revenue: number) =>
-    npvConstant(discountRate, annualExpense + revenue, horizonYears, initialInvestment)
+    npvConstant(discountRate, -annualExpense + revenue, horizonYears, initialInvestment)
 
-  // Lower bound: R=0 should produce a negative NPV (cost > 0)
-  let lo = 0
-  let hi = Math.abs(initialInvestment) * 2  // generous upper bound
+  // Lower bound: revenue must at least cover OPEX (90% of OPEX as floor)
+  let lo = annualExpense * 0.9
+  let hi = annualExpense + Math.abs(initialInvestment)  // generous upper bound
 
-  // Expand hi until sign changes
+  // Expand hi until f(hi) > 0 (NPV turns positive)
   let iterations = 0
   while (f(hi) < target && iterations < 100) {
     hi *= 2
@@ -122,8 +130,11 @@ function bisectBreakEven(
 export function computeCapex(inputs: CapexInputs): {
   power: number; cooling: number; data: number; coreAndShell: number; fitOut: number; total: number
 } {
-  const coreAndShell = inputs.coreAndShellCostPerM2 * inputs.totalFloorAreaM2
-  const fitOut = inputs.fitOutCostPerM2 * inputs.totalFloorAreaM2
+  // Cost basis = raw sum of facilities + dataroom areas (workbook Paris!G40/G41)
+  // NOT the 0.7-compacted overall area which is used for floor area reporting only.
+  const costBasisM2 = inputs.facilitiesAreaM2 + inputs.dataroomAreaM2
+  const coreAndShell = inputs.coreAndShellCostPerM2 * costBasisM2
+  const fitOut = inputs.fitOutCostPerM2 * costBasisM2
   const total =
     inputs.powerEquipmentCost +
     inputs.coolingEquipmentCost +

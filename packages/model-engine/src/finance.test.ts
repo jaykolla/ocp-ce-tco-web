@@ -3,13 +3,15 @@ import { computeCapex, computeOpex, computeFinancials } from './finance'
 
 describe('computeCapex', () => {
   it('sums all CAPEX components correctly', () => {
+    // Cost basis = facilitiesAreaM2 + dataroomAreaM2 = 600 + 400 = 1000 m²
     const result = computeCapex({
       powerEquipmentCost: 1_000_000,
       coolingEquipmentCost: 500_000,
       dataEquipmentCost: 2_000_000,
       coreAndShellCostPerM2: 1800,
       fitOutCostPerM2: 1800,
-      totalFloorAreaM2: 1000,
+      facilitiesAreaM2: 600,
+      dataroomAreaM2: 400,
     })
     expect(result.coreAndShell).toBe(1_800_000)
     expect(result.fitOut).toBe(1_800_000)
@@ -45,7 +47,8 @@ describe('computeFinancials', () => {
       dataEquipmentCost: 2_000_000,
       coreAndShellCostPerM2: 1800,
       fitOutCostPerM2: 1800,
-      totalFloorAreaM2: 1000,
+      facilitiesAreaM2: 600,
+      dataroomAreaM2: 400,
     })
     const opex = computeOpex({
       annualElectricityKwh: 10_000_000,

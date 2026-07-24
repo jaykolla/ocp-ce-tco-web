@@ -7,6 +7,19 @@
  * 2. ScenarioInput + CalculationResult API (used by results page)
  */
 
+// ---------------------------------------------------------------------------
+// Print / PDF report
+// ---------------------------------------------------------------------------
+
+/**
+ * Open the dedicated print report page in a new tab.
+ * The user can then use browser Print → Save as PDF.
+ */
+export function printReport(): void {
+  const base = process.env.NODE_ENV === 'production' ? '/ocp-ce-tco-web' : ''
+  window.open(`${base}/scenario/results/report`, '_blank')
+}
+
 import type { Scenario } from '@/store/scenario-store'
 import type { ScenarioInput, CalculationResult } from '@ocp-tco/model-schema'
 

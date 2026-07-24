@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OCP CE TCO Web Tool</title>
+  <script>
+    // GitHub Pages SPA redirect
+    // When GitHub Pages serves this file for an unknown route, we save the
+    // intended path to sessionStorage and redirect to the app root which
+    // then reads it and navigates to the correct client-side route.
+    var path = window.location.pathname.replace('/ocp-ce-tco-web', '');
+    if (path && path !== '/') {
+      sessionStorage.setItem('ocp-tco-redirect', path);
+    }
+    window.location.replace('/ocp-ce-tco-web/');
+  </script>
+</head>
+<body>
+  <p>Redirecting&hellip;</p>
+</body>
+</html>
