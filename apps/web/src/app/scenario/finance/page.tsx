@@ -10,33 +10,37 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { validateNumericInput, FINANCE_FIELD_VALIDATORS } from '@/lib/validation'
 
+const CURRENCY_SYMBOLS: Record<string, string> = {
+  EUR: '€', USD: '$', GBP: '£', JPY: '¥', CHF: 'CHF', CAD: 'CA$', AUD: 'A$', SGD: 'S$',
+}
+
 interface FieldConfig {
   key: string
   label: string
-  unit: string
+  unit: (sym: string) => string
   hint?: string
 }
 
 const LEFT_FIELDS: FieldConfig[] = [
-  { key: 'electricityUnitCost', label: 'Electricity Unit Cost', unit: 'EUR/kWh', hint: 'Cost per kWh of grid electricity' },
-  { key: 'coreAndShellUnitCost', label: 'Core & Shell Cost', unit: 'EUR/m²', hint: 'Construction cost for core & shell' },
-  { key: 'fitOutUnitCost', label: 'Fit-Out Cost', unit: 'EUR/m²', hint: 'Interior fit-out and MEP cost' },
-  { key: 'waterUnitCost', label: 'Water Cost', unit: 'EUR/m³', hint: 'Municipal water supply cost' },
-  { key: 'heatRecoveryValue', label: 'Heat Recovery Value', unit: 'EUR/kWh', hint: 'Value of recovered heat for resale' },
-  { key: 'coreAndShellMaintenancePct', label: 'Core & Shell Maintenance', unit: '% /yr', hint: 'Annual maintenance as % of CAPEX' },
-  { key: 'equipmentMaintenancePct', label: 'Equipment Maintenance', unit: '% /yr', hint: 'Annual equipment maintenance as % of CAPEX' },
+  { key: 'electricityUnitCost', label: 'Electricity Unit Cost', unit: (s) => `${s}/kWh`, hint: 'Cost per kWh of grid electricity' },
+  { key: 'coreAndShellUnitCost', label: 'Core & Shell Cost', unit: (s) => `${s}/m²`, hint: 'Construction cost for core & shell' },
+  { key: 'fitOutUnitCost', label: 'Fit-Out Cost', unit: (s) => `${s}/m²`, hint: 'Interior fit-out and MEP cost' },
+  { key: 'waterUnitCost', label: 'Water Cost', unit: (s) => `${s}/m³`, hint: 'Municipal water supply cost' },
+  { key: 'heatRecoveryValue', label: 'Heat Recovery Value', unit: (s) => `${s}/kWh`, hint: 'Value of recovered heat for resale' },
+  { key: 'coreAndShellMaintenancePct', label: 'Core & Shell Maintenance', unit: () => '% /yr', hint: 'Annual maintenance as % of CAPEX' },
+  { key: 'equipmentMaintenancePct', label: 'Equipment Maintenance', unit: () => '% /yr', hint: 'Annual equipment maintenance as % of CAPEX' },
 ]
 
 const RIGHT_FIELDS: FieldConfig[] = [
-  { key: 'electricityCo2GPerKwh', label: 'CO₂ Intensity', unit: 'g CO₂/kWh', hint: 'Grid electricity carbon intensity' },
-  { key: 'electricityWaterLPerKwh', label: 'Water Intensity', unit: 'L/kWh', hint: 'Water consumption per kWh of electricity generated' },
-  { key: 'facilityLifespanYr', label: 'Facility Lifespan', unit: 'years', hint: 'Expected building useful life' },
-  { key: 'itLifespanYr', label: 'IT Equipment Lifespan', unit: 'years', hint: 'Average IT refresh cycle' },
-  { key: 'discountRatePct', label: 'NPV Discount Rate', unit: '% /yr', hint: 'Discount rate for NPV calculation' },
-  { key: 'financingRatePct', label: 'Financing Rate', unit: '% /yr', hint: 'Loan interest rate' },
-  { key: 'financedPct', label: 'Financed Portion', unit: '%', hint: 'Percentage of CAPEX financed by debt' },
-  { key: 'financingTermYr', label: 'Financing Term', unit: 'years', hint: 'Loan repayment period' },
-  { key: 'annualHours', label: 'Annual Hours', unit: 'hr/yr', hint: 'Hours of operation per year (8760 = continuous)' },
+  { key: 'electricityCo2GPerKwh', label: 'CO₂ Intensity', unit: () => 'g CO₂/kWh', hint: 'Grid electricity carbon intensity' },
+  { key: 'electricityWaterLPerKwh', label: 'Water Intensity', unit: () => 'L/kWh', hint: 'Water consumption per kWh of electricity generated' },
+  { key: 'facilityLifespanYr', label: 'Facility Lifespan', unit: () => 'years', hint: 'Expected building useful life' },
+  { key: 'itLifespanYr', label: 'IT Equipment Lifespan', unit: () => 'years', hint: 'Average IT refresh cycle' },
+  { key: 'discountRatePct', label: 'NPV Discount Rate', unit: () => '% /yr', hint: 'Discount rate for NPV calculation' },
+  { key: 'financingRatePct', label: 'Financing Rate', unit: () => '% /yr', hint: 'Loan interest rate' },
+  { key: 'financedPct', label: 'Financed Portion', unit: () => '%', hint: 'Percentage of CAPEX financed by debt' },
+  { key: 'financingTermYr', label: 'Financing Term', unit: () => 'years', hint: 'Loan repayment period' },
+  { key: 'annualHours', label: 'Annual Hours', unit: () => 'hr/yr', hint: 'Hours of operation per year (8760 = continuous)' },
 ]
 
 function FinanceField({
@@ -91,6 +95,8 @@ export default function FinancePage() {
   const store = useWizardStore()
   const { nextStep, prevStep, updateFinance } = store
   const [errors, setErrors] = useState<FieldErrors>({})
+
+  const currencySymbol = CURRENCY_SYMBOLS[store.currency] ?? store.currency
 
   const handleChange = (key: string, val: string) => {
     updateFinance({ [key]: val })
@@ -174,7 +180,7 @@ export default function FinancePage() {
                 key={field.key}
                 fieldKey={field.key}
                 label={field.label}
-                unit={field.unit}
+                unit={field.unit(currencySymbol)}
                 hint={field.hint}
                 value={getValue(field.key)}
                 error={errors[field.key]}
@@ -195,7 +201,7 @@ export default function FinancePage() {
                 key={field.key}
                 fieldKey={field.key}
                 label={field.label}
-                unit={field.unit}
+                unit={field.unit(currencySymbol)}
                 hint={field.hint}
                 value={getValue(field.key)}
                 error={errors[field.key]}

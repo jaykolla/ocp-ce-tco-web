@@ -24,6 +24,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   'power': 'Power',
   'financial': 'Financial',
   'summary': 'Summary',
+  'reference': 'Model Reference',
 }
 
 function segmentLabel(segment: string): string {

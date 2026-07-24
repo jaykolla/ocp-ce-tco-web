@@ -15,6 +15,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'New Scenario', href: '/scenario' },
   { label: 'Compare', href: '/compare' },
   { label: 'Library', href: '/library' },
+  { label: 'Model Reference', href: '/reference' },
   { label: 'About', href: '/about' },
   { label: 'Audit Log', href: '/audit' },
 ]

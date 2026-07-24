@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { Zap } from 'lucide-react'
+import { Zap, ExternalLink } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -10,13 +10,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { cn } from '@/lib/utils'
 
 const CRITICAL_POWER_CONFIGS = [
-  { value: 'default', label: 'Default' },
-  { value: 'se-rd-crit', label: 'SE RD Crit' },
+  {
+    value: 'default',
+    label: 'Generic Baseline',
+    description: 'Standard equipment assumptions — use when no specific vendor config is needed',
+  },
+  {
+    value: 'se-rd-crit',
+    label: 'Schneider Electric — Critical Path (SE RD65)',
+    description: 'SE reference design for UPS, switchgear & busbar; no transformer modeled on this path',
+  },
 ]
 
 const MECHANICAL_POWER_CONFIGS = [
-  { value: 'default', label: 'Default' },
-  { value: 'se-rd-mech', label: 'SE RD Mech' },
+  {
+    value: 'default',
+    label: 'Generic Baseline',
+    description: 'Standard equipment assumptions — use when no specific vendor config is needed',
+  },
+  {
+    value: 'se-rd-mech',
+    label: 'Schneider Electric — Mechanical Path (SE RD65)',
+    description: 'SE reference design for transformer & generator; UPS not modeled on this path',
+  },
 ]
 
 const REDUNDANCY_OPTIONS = ['N', 'N+1', '2N'] as const
@@ -59,12 +75,27 @@ export default function PowerPage() {
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Power Configuration</CardTitle>
-            <CardDescription>Select critical and mechanical power equipment configurations.</CardDescription>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <CardTitle>Power Equipment Configuration</CardTitle>
+                <CardDescription className="mt-1">
+                  Choose vendor reference designs for each part of the power chain. Select "Generic Baseline" if you don't have a specific vendor preference.
+                </CardDescription>
+              </div>
+              <a
+                href="/reference?tab=power"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-1 text-xs text-[var(--color-primary)] hover:underline mt-0.5"
+              >
+                Model assumptions <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </CardHeader>
           <CardContent className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="critical-power">Critical Power Config</Label>
+              <Label htmlFor="critical-power">Critical Power Equipment</Label>
+              <p className="text-xs text-[var(--color-text-subtle)]">UPS, switchgear, and busbar configuration</p>
               <Select
                 value={criticalPowerConfigId}
                 onValueChange={(val) => updatePower({ criticalPowerConfigId: val })}
@@ -72,16 +103,22 @@ export default function PowerPage() {
                 <SelectTrigger id="critical-power">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="w-[420px]">
                   {CRITICAL_POWER_CONFIGS.map((c) => (
-                    <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
+                    <SelectItem key={c.value} value={c.value} textValue={c.label}>
+                      <div className="flex flex-col py-0.5">
+                        <span className="font-medium">{c.label}</span>
+                        <span className="text-xs text-[var(--color-text-subtle)] font-normal">{c.description}</span>
+                      </div>
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="mechanical-power">Mechanical Power Config</Label>
+              <Label htmlFor="mechanical-power">Mechanical Power Equipment</Label>
+              <p className="text-xs text-[var(--color-text-subtle)]">Transformer, generator, and distribution configuration</p>
               <Select
                 value={mechanicalPowerConfigId}
                 onValueChange={(val) => updatePower({ mechanicalPowerConfigId: val })}
@@ -89,9 +126,14 @@ export default function PowerPage() {
                 <SelectTrigger id="mechanical-power">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="w-[420px]">
                   {MECHANICAL_POWER_CONFIGS.map((c) => (
-                    <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
+                    <SelectItem key={c.value} value={c.value} textValue={c.label}>
+                      <div className="flex flex-col py-0.5">
+                        <span className="font-medium">{c.label}</span>
+                        <span className="text-xs text-[var(--color-text-subtle)] font-normal">{c.description}</span>
+                      </div>
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -102,7 +144,7 @@ export default function PowerPage() {
         <Card>
           <CardHeader>
             <CardTitle>Power Redundancy</CardTitle>
-            <CardDescription>Select the redundancy level for the power infrastructure.</CardDescription>
+            <CardDescription>How many backup power paths protect against a single equipment failure.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-3" role="radiogroup" aria-label="Power redundancy level">
@@ -120,7 +162,9 @@ export default function PowerPage() {
                   )}
                 >
                   <span className="text-lg font-bold">{opt}</span>
-                  <span className="text-xs">{opt === 'N' ? 'No redundancy' : opt === 'N+1' ? 'One extra' : 'Full duplicate'}</span>
+                  <span className="text-xs text-center leading-tight">
+                    {opt === 'N' ? 'No backup — lowest cost' : opt === 'N+1' ? '1 spare unit — most common' : 'Full duplicate system'}
+                  </span>
                 </button>
               ))}
             </div>

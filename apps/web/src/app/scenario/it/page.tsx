@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { Server } from 'lucide-react'
+import { Server, ExternalLink } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -94,10 +94,22 @@ export default function ITDesignPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Dataroom Slots</CardTitle>
-            <CardDescription>
-              Configure up to 4 dataroom slots. Select configuration type for each slot.
-            </CardDescription>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <CardTitle>Dataroom Slots</CardTitle>
+                <CardDescription className="mt-1">
+                  Configure up to 4 dataroom slots. Select configuration type for each slot.
+                </CardDescription>
+              </div>
+              <a
+                href="/reference?tab=dataroom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-1 text-xs text-[var(--color-primary)] hover:underline mt-0.5"
+              >
+                Model assumptions <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </CardHeader>
           <CardContent className="space-y-4">
             {dataroomSlots.map((slot, index) => (

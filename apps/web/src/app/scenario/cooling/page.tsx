@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Thermometer, Globe, MapPin } from 'lucide-react'
+import { Thermometer, Globe, MapPin, ExternalLink } from 'lucide-react'
 import { useWizardStore } from '@/store/wizard-store'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -110,8 +110,20 @@ export default function CoolingPage() {
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Cooling Configuration</CardTitle>
-            <CardDescription>Select air and liquid cooling equipment configurations.</CardDescription>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <CardTitle>Cooling Configuration</CardTitle>
+                <CardDescription className="mt-1">Select air and liquid cooling equipment configurations.</CardDescription>
+              </div>
+              <a
+                href="/reference?tab=cooling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-1 text-xs text-[var(--color-primary)] hover:underline mt-0.5"
+              >
+                Model assumptions <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </CardHeader>
           <CardContent className="space-y-5">
             <div className="space-y-2">
